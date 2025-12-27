@@ -1,0 +1,5 @@
+body {font-family: Arial; background: #f4f7fc; margin: 0;}
+header {background: #0059ff; padding: 20px; text-align: center; color: white;}
+nav a {color: white; margin: 0 10px; text-decoration: none; font-weight: bold;}
+.hero {padding: 40px; text-align: center;}
+footer {background: #111; color: white; text-align: center; padding: 10px; margin-top: 40px;}
