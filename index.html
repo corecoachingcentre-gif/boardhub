@@ -29,33 +29,21 @@ nav{background:#0a4fa3;padding:10px 20px;}
 nav ul{list-style:none;display:flex;flex-wrap:wrap;gap:18px;color:white;font-weight:600;}
 nav ul li{position:relative;cursor:pointer;padding:6px 0;}
 
-/* DROPDOWN (VERTICAL LINE |) */
+/* DROPDOWN */
 nav ul li ul{
   display:none;flex-direction:column;background:white;position:absolute;top:32px;left:0;
   padding:8px 0;min-width:200px;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.18);
-  animation:drop .25s ease-out;
 }
-@keyframes drop{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
-
-/* SHOW ON HOVER / TAP */
 nav ul li:hover > ul,nav ul li:active > ul{display:flex;}
-
-/* INNER MENU ITEMS */
 nav ul li ul li{
   padding:8px 12px;border-bottom:1px solid #e6e6e6;font-weight:500;color:black;
 }
 nav ul li ul li:hover{background:#eaf0ff;color:#0a4fa3;font-weight:600;}
 
-/* SUBJECT → CHAPTER DROPDOWN */
-nav ul li ul li ul{
-  display:none;position:absolute;left:200px;top:0;flex-direction:column;background:white;
-}
-nav ul li ul li:hover ul{display:flex;}
-
 /* MOBILE SAME STYLE */
 @media(max-width:768px){
   nav ul{flex-direction:column;gap:10px;}
-  nav ul li ul,nav ul li ul li ul{position:static;box-shadow:none;width:100%;}
+  nav ul li ul{position:static;box-shadow:none;width:100%;}
 }
 </style>
 </head>
@@ -71,77 +59,59 @@ nav ul li ul li:hover ul{display:flex;}
 
   <li>About</li>
 
-  <!-- NOTES -->
+  <!-- NOTES (Only till subjects, no chapters) -->
   <li>Notes |
     <ul>
       <!-- CLASS 9 -->
       <li>Class 9 |
         <ul>
-         <li><a href="class9-hindi.html" style="color:black;">Hindi (Ch 1–14)</a></li>
-          <li>English (Ch 1–14)</li>
-          <li>Maths (Ch 1–14)</li>
-          <li>Science (Ch 1–14)</li>
-          <li>Social Science (Ch 1–14)</li>
+          <li>Hindi</li>
+          <li>English</li>
+          <li>Maths</li>
+          <li>Science</li>
+          <li>Social Science</li>
         </ul>
       </li>
 
       <!-- CLASS 10 -->
       <li>Class 10 |
         <ul>
-          <li>Hindi (Ch 1–14)</li>
-          <li>English (Ch 1–14)</li>
-          <li>Maths (Ch 1–14)</li>
-          <li>Science (Ch 1–14)</li>
-          <li>Social Science (Ch 1–14)</li>
+          <li>Hindi</li>
+          <li>English</li>
+          <li>Maths</li>
+          <li>Science</li>
+          <li>Social Science</li>
         </ul>
       </li>
 
       <!-- CLASS 11 -->
       <li>Class 11 |
         <ul>
-          <li>Physics (Ch 1–14)</li>
-          <li>Chemistry (Ch 1–14)</li>
-          <li>Biology (Ch 1–14)</li>
-          <li>Maths (Ch 1–14)</li>
-          <li>English (Ch 1–14)</li>
-          <li>Hindi (Ch 1–14)</li>
+          <li>Physics</li>
+          <li>Chemistry</li>
+          <li>Biology</li>
+          <li>Maths</li>
+          <li>English</li>
+          <li>Hindi</li>
         </ul>
       </li>
 
       <!-- CLASS 12 -->
       <li>Class 12 |
         <ul>
-          <li>Physics (Ch 1–14)</li>
-          <li>Chemistry (Ch 1–14)</li>
-          <li>Biology (Ch 1–14)</li>
-          <li>Maths (Ch 1–14)</li>
-          <li>English (Ch 1–14)</li>
-          <li>Hindi (Ch 1–14)</li>
+          <li>Physics</li>
+          <li>Chemistry</li>
+          <li>Biology</li>
+          <li>Maths</li>
+          <li>English</li>
+          <li>Hindi</li>
         </ul>
       </li>
     </ul>
   </li>
 
-  <!-- SHEETS -->
-  <li>Sheets |
-    <ul>
-      <li>Class 9 | <ul><li>Hindi</li><li>English</li><li>Maths</li><li>Science</li><li>Social Science</li></ul></li>
-      <li>Class 10 |<ul><li>Hindi</li><li>English</li><li>Maths</li><li>Science</li><li>Social Science</li></ul></li>
-      <li>Class 11 |<ul><li>Physics</li><li>Chemistry</li><li>Biology</li><li>Maths</li><li>English</li><li>Hindi</li></ul></li>
-      <li>Class 12 |<ul><li>Physics</li><li>Chemistry</li><li>Biology</li><li>Maths</li><li>English</li><li>Hindi</li></ul></li>
-    </ul>
-  </li>
-
-  <!-- SAMPLE PAPERS -->
-  <li>Sample Papers |
-    <ul>
-      <li>MP Board Class 10</li>
-      <li>MP Board Class 12</li>
-      <li>CBSE Class 10</li>
-      <li>CBSE Class 12</li>
-    </ul>
-  </li>
-
+  <li>Sheets</li>
+  <li>Sample Papers</li>
   <li>Updates</li>
 
 </ul>
