@@ -18,7 +18,6 @@ header .logo{color:white; font-size:26px; font-weight:bold;}
 nav a{color:white; margin:0 10px; text-decoration:none; font-weight:600;}
 nav .btn{background:white; color:#0047b3; padding:5px 12px; border-radius:5px;}
 
-/* HAMBURGER BUTTON (Hidden on laptop) */
 .hamburger{
     font-size:30px;
     color:white;
@@ -26,77 +25,63 @@ nav .btn{background:white; color:#0047b3; padding:5px 12px; border-radius:5px;}
     cursor:pointer;
 }
 
-/* MAIN CONTENT SPACING */
+/* CONTENT SPACING */
 main, .hero{margin-top:140px;}
 
-/* HERO */
 .hero{text-align:center; padding:60px 20px; background:white;}
 .hero h1{font-size:38px; color:#0047b3;}
 .hero p{font-size:18px; margin:10px 0;}
 .cta{background:#0047b3; color:white; padding:10px 20px; border-radius:6px; text-decoration:none;}
 
-/* FEATURES */
 .features{display:flex; justify-content:center; gap:20px; padding:40px;}
-.features .box{
-    background:white;
-    padding:20px;
-    width:250px;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
-    text-align:center;
-}
-.features .box h3{color:#0047b3; margin-bottom:10px;}
+.features .box{background:white;padding:20px;width:250px;border-radius:10px;box-shadow:0 0 10px rgba(0,0,0,0.1);text-align:center;}
+.features h3{color:#0047b3;}
 
 /* FOOTER */
-footer{
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:15px;
-    margin-top:40px;
-}
+footer{background:#111;color:white;text-align:center;padding:15px;margin-top:40px;}
 
-/* CLASS MENU AT BOTTOM */
+/* 📚 CLASS DROPDOWNS */
 .class-menu{
     background:#dce7ff;
     text-align:center;
     padding:20px 0;
 }
-.class-menu button{
-    width:250px;
-    padding:12px;
-    margin:8px;
+.class-menu summary{
+    font-size:20px;
+    font-weight:bold;
     background:#0047b3;
     color:white;
-    border:none;
-    border-radius:8px;
-    font-size:17px;
+    padding:10px;
+    width:90%;
+    margin:10px auto;
+    border-radius:6px;
+    cursor:pointer;
+}
+.class-menu a{
+    display:block;
+    background:white;
+    width:85%;
+    margin:6px auto;
+    padding:10px;
+    border-radius:6px;
+    text-decoration:none;
+    color:#0047b3;
+    font-weight:600;
+}
+.class-menu a:hover{
+    background:#0047b3;
+    color:white;
 }
 
-/* =============== 📱 MOBILE RESPONSIVE =============== */
-@media (max-width: 768px){
-
-    /* Header becomes vertical */
-    header{flex-direction:column; padding:15px;}
-
-    /* Show hamburger */
+/* 📱 MOBILE RESPONSIVE */
+@media (max-width:768px){
+    header{flex-direction:column;padding:15px;}
     .hamburger{display:block;}
-
-    /* Hide menu by default */
-    nav{display:none; flex-direction:column; text-align:center;}
-    nav.show{display:flex;} /* When hamburger clicked, show menu */
-
-    nav a{display:block; margin:10px 0; font-size:18px;}
-
-    main, .hero{margin-top:160px;}
-
-    /* Features change to full width */
-    .features{flex-direction:column; padding:20px;}
+    nav{display:none;flex-direction:column;text-align:center;}
+    nav.show{display:flex;}
+    nav a{display:block;margin:10px 0;}
+    main{margin-top:160px;}
+    .features{flex-direction:column;}
     .features .box{width:90%;}
-
-    /* Bottom buttons full width */
-    .class-menu button{
-        width:90%;
-        font-size:18px;
-    }
+    .class-menu summary, .class-menu a{width:95%;}
 }
