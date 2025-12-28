@@ -5,11 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BoardHub - Home</title>
 
-<!-- GOOGLE FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* GLOBAL */
+/* GLOBAL RESET */
 *{margin:0;padding:0;box-sizing:border-box;}
 body{
     font-family:'Poppins',sans-serif;
@@ -17,172 +16,72 @@ body{
     color:#0a2d5f;
 }
 
-/* TOP EMAIL BAR */
+/* TOP BAR */
 .topbar{
-    background:white;
-    padding:10px 30px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    font-size:14px;
-    color:#1a3b7e;
-    border-bottom:1px solid #e2e6f7;
+    background:white;padding:10px 30px;display:flex;justify-content:space-between;align-items:center;
+    font-size:14px;color:#1a3b7e;border-bottom:1px solid #e2e6f7;
 }
 
-/* LOGO HEADER */
-.header{
-    background:white;
-    padding:20px 30px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-.logo{
-    font-size:35px;
-    font-weight:700;
-    color:#0b3c8c;
-    display:flex;
-    gap:8px;
-    align-items:center;
-}
+/* HEADER LOGO */
+.header{background:white;padding:20px 30px;display:flex;justify-content:space-between;align-items:center;}
+.logo{font-size:35px;font-weight:700;color:#0b3c8c;display:flex;align-items:center;gap:8px;}
 
 /* NAVBAR */
-.navbar{
-    background:#0a4db3;
-    padding:14px 30px;
-    position:relative;
-    z-index:999;
-}
-.navbar ul{
-    list-style:none;
-    display:flex;
-    gap:35px;
-    flex-wrap:wrap;
-}
+.navbar{background:#0a4db3;padding:12px 30px;position:relative;}
+.navbar ul{list-style:none;display:flex;gap:35px;}
 .navbar a{
-    color:white;
-    text-decoration:none;
-    font-weight:500;
-    cursor:pointer;
-    font-size:16px;
+    color:white;text-decoration:none;font-weight:500;font-size:16px;position:relative;cursor:pointer;
 }
-.navbar li{
-    position:relative;
-}
+.navbar li{position:relative;}
 
-/* DROPDOWN BASE */
+/* DROPDOWN BASE - now vertical */
 .dropdown{
-    display:none;
-    position:absolute;
-    background:white;
-    padding:20px;
-    top:40px;
-    border-radius:8px;
-    box-shadow:0 8px 18px rgba(0,0,0,0.18);
-    min-width:230px;
-}
-.navbar li:hover .dropdown{display:flex;gap:25px;}
-
-/* CLASS PANEL */
-.sub-menu{
-    border-right:2px solid #d6daf7;
-    padding-right:15px;
-    position:relative;
-}
-.sub-menu:last-child{border-right:none;}
-.sub-menu h4{
-    font-size:14px;
-    font-weight:600;
-    color:#0a4db3;
-    cursor:pointer;
-    padding:5px 0;
-}
-.sub-menu:hover h4{text-decoration:underline;}
-
-/* SUBJECT PANEL */
-.inner-menu{
-    display:none;
-    background:white;
-    position:absolute;
-    left:160px;
-    top:0;
-    padding:15px;
-    border-radius:8px;
-    box-shadow:0 8px 18px rgba(0,0,0,0.18);
-    min-width:160px;
-}
-.sub-menu:hover .inner-menu{display:block;}
-.inner-menu a{
-    display:block;
-    padding:6px 0;
-    color:#0a4db3;
-    font-size:14px;
-}
-.inner-menu a:hover{
-    background:#eaf0ff;
-    border-radius:4px;
+    position:absolute;top:45px;left:0;background:white;padding:15px 0;
+    min-width:190px;border-radius:6px;box-shadow:0 8px 18px rgba(0,0,0,0.18);
+    display:flex;flex-direction:column;opacity:0;visibility:hidden;
+    transform:translateY(10px);transition:all .25s ease;
 }
 
-/* HERO */
-.hero{
-    display:flex;
-    justify-content:space-between;
-    padding:50px 30px;
-    background:white;
-    flex-wrap:wrap;
-}
-.hero-text h1{
-    font-size:42px;
-    font-weight:700;
-    color:#0b3c8c;
-}
-.hero-text p{
-    margin:12px 0 25px;
-    font-size:16px;
-    color:#1d315c;
-    width:350px;
-}
-.button{
-    background:#ff8b34;
-    color:white;
-    padding:12px 22px;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:600;
+/* SHOW ON HOVER (smooth open) */
+.navbar li:hover .dropdown{
+    opacity:1;visibility:visible;transform:translateY(0);
 }
 
-/* LATEST UPDATES */
+/* DROPDOWN ITEMS */
+.dropdown h4{
+    font-size:15px;font-weight:600;color:#0a4db3;padding:10px 20px 5px;border-bottom:1px solid #dce3ff;
+}
+.dropdown a{
+    display:block;padding:8px 20px;font-size:14px;color:#0a4db3;
+}
+.dropdown a:hover{background:#eaf0ff;}
+
+/* VERTICAL LINE STYLE ( | ) */
+.separator{
+    border-left:2px solid #d6daf7;
+    height:100%;
+    margin:0 10px;
+}
+
+/* HERO SECTION */
+.hero{display:flex;justify-content:space-between;padding:50px 30px;background:white;flex-wrap:wrap;}
+.hero-text h1{font-size:42px;font-weight:700;color:#0b3c8c;}
+.hero-text p{margin:12px 0 25px;font-size:16px;color:#1d315c;width:350px;}
+.button{background:#ff8b34;color:white;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:600;}
+
+/* UPDATE BOX */
 .update-box{
-    background:white;
-    width:270px;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 5px 18px rgba(0,0,0,0.1);
-    margin-top:10px;
+    background:white;width:270px;padding:20px;border-radius:12px;
+    box-shadow:0 5px 18px rgba(0,0,0,0.1);margin-top:10px;
 }
-.update-box h3{
-    font-size:19px;
-    margin-bottom:10px;
-    color:#0b3c8c;
-}
-.update-box li{
-    margin:10px 0;
-    color:#0a3a7a;
-}
+.update-box h3{font-size:19px;margin-bottom:10px;color:#0b3c8c;}
+.update-box li{margin:10px 0;color:#0a3a7a;}
 
 /* RESPONSIVE */
 @media(max-width:768px){
     .navbar ul{flex-direction:column;gap:15px;}
-    .dropdown{position:static;display:none;box-shadow:none;}
-    .navbar li:hover .dropdown{display:block;}
-    .inner-menu{
-        position:static;
-        box-shadow:none;
-        padding-left:10px;
-    }
+    .dropdown{position:relative;box-shadow:none;}
     .hero{flex-direction:column;text-align:center;}
-    .hero-text p{width:100%;}
-    .update-box{margin-top:25px;}
 }
 </style>
 </head>
@@ -204,73 +103,42 @@ body{
     <ul>
         <li><a>About Us</a></li>
 
-        <!-- NOTES -->
+        <!-- NOTES MENU -->
         <li><a>Notes ▼</a>
             <div class="dropdown">
-                
-                <!-- Class 9 -->
-                <div class="sub-menu">
-                    <h4>Class 9 ▶</h4>
-                    <div class="inner-menu">
-                      <a>Hindi</a><a>English</a><a>Maths</a><a>Science</a><a>Social Science</a>
-                    </div>
-                </div>
-
-                <!-- Class 10 -->
-                <div class="sub-menu">
-                    <h4>Class 10 ▶</h4>
-                    <div class="inner-menu">
-                      <a>Hindi</a><a>English</a><a>Maths</a><a>Science</a><a>Social Science</a>
-                    </div>
-                </div>
-
-                <!-- Class 11 -->
-                <div class="sub-menu">
-                    <h4>Class 11 ▶</h4>
-                    <div class="inner-menu">
-                      <a>Hindi</a><a>English</a><a>Maths</a><a>Physics</a><a>Chemistry</a><a>Biology</a>
-                    </div>
-                </div>
-
-                <!-- Class 12 -->
-                <div class="sub-menu">
-                    <h4>Class 12 ▶</h4>
-                    <div class="inner-menu">
-                      <a>Hindi</a><a>English</a><a>Maths</a><a>Physics</a><a>Chemistry</a><a>Biology</a>
-                    </div>
-                </div>
+                <h4>Class 9</h4>
+                <a>Hindi</a><a>English</a><a>Maths</a><a>Science</a><a>Social Science</a>
+                <div class="separator"></div>
+                <h4>Class 10</h4>
+                <a>Hindi</a><a>English</a><a>Maths</a><a>Science</a><a>Social Science</a>
+                <div class="separator"></div>
+                <h4>Class 11</h4>
+                <a>Hindi</a><a>English</a><a>Maths</a><a>Physics</a><a>Chemistry</a><a>Biology</a>
+                <div class="separator"></div>
+                <h4>Class 12</h4>
+                <a>Hindi</a><a>English</a><a>Maths</a><a>Physics</a><a>Chemistry</a><a>Biology</a>
             </div>
         </li>
 
-        <!-- SHEETS -->
+        <!-- SHEETS MENU -->
         <li><a>Sheets ▼</a>
             <div class="dropdown">
-                <div class="sub-menu"><h4>Class 9-10 ▶</h4>
-                    <div class="inner-menu">
-                       <a>Hindi</a><a>English</a><a>Maths</a><a>Science</a><a>Social Science</a>
-                    </div>
-                </div>
-                <div class="sub-menu"><h4>Class 11-12 ▶</h4>
-                    <div class="inner-menu">
-                       <a>Hindi</a><a>English</a><a>Maths</a><a>Physics</a><a>Chemistry</a><a>Biology</a>
-                    </div>
-                </div>
+                <h4>Class 9 - 10</h4>
+                <a>Hindi</a><a>English</a><a>Maths</a><a>Science</a><a>Social Science</a>
+                <div class="separator"></div>
+                <h4>Class 11 - 12</h4>
+                <a>Hindi</a><a>English</a><a>Maths</a><a>Physics</a><a>Chemistry</a><a>Biology</a>
             </div>
         </li>
 
         <!-- SAMPLE PAPER -->
         <li><a>Sample Paper ▼</a>
             <div class="dropdown">
-                <div class="sub-menu"><h4>MP Board ▶</h4>
-                    <div class="inner-menu">
-                        <a>Class 10</a><a>Class 12</a>
-                    </div>
-                </div>
-                <div class="sub-menu"><h4>CBSE Board ▶</h4>
-                    <div class="inner-menu">
-                        <a>Class 10</a><a>Class 12</a>
-                    </div>
-                </div>
+                <h4>MP Board</h4>
+                <a>Class 10</a><a>Class 12</a>
+                <div class="separator"></div>
+                <h4>CBSE Board</h4>
+                <a>Class 10</a><a>Class 12</a>
             </div>
         </li>
 
@@ -278,7 +146,7 @@ body{
     </ul>
 </div>
 
-<!-- HERO -->
+<!-- HERO SECTION -->
 <div class="hero">
     <div class="hero-text">
         <h1>Welcome to <br>BoardHub</h1>
