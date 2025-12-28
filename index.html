@@ -4,53 +4,69 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BoardHub - Home</title>
 
-<!-- GOOGLE FONT -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<!-- ⭐ NEW PREMIUM FONTS ⭐ -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Nunito+Sans:wght@400;600;700&family=Roboto+Slab:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+/* RESET + BASE FONT */
+*{
+margin:0;padding:0;box-sizing:border-box;
+font-family:'Nunito Sans', sans-serif;
+}
 
+/* HEADER BAR */
 header{
 background:#ffffff;padding:10px 20px;display:flex;
 justify-content:space-between;align-items:center;
-border-bottom:1px solid #dcdcdc;
+border-bottom:2px solid #e1e1e1;
 font-size:15px;
 }
 
+/* LOGO TEXT */
+.logo{
+padding:10px 20px;font-size:40px;
+font-family:'Montserrat',sans-serif;
+font-weight:800;color:#0047ab;
+}
+
+/* NAVIGATION BAR */
 nav{
-background:#0a4ea3;padding:12px;display:flex;
-gap:30px;flex-wrap:wrap;align-items:center;
+background:#043b8a;padding:14px;display:flex;
+gap:32px;flex-wrap:wrap;align-items:center;
 }
 
 nav a{
-color:white;text-decoration:none;font-size:17px;
-font-weight:500;
+color:white;text-decoration:none;font-size:18px;
+font-weight:600;transition:0.3s;
 }
+nav a:hover{color:#ffdd57;}
 
+/* MAIN DROPDOWNS */
 .dropdown{position:relative;}
 .dropdown-content, .submenu, .chapter-menu{
 display:none;position:absolute;background:white;color:black;
-padding:10px;border-radius:6px;min-width:200px;
-box-shadow:0 3px 10px rgba(0,0,0,0.3);
+padding:10px;border-radius:8px;min-width:230px;
+box-shadow:0 4px 15px rgba(0,0,0,0.25);z-index:10;
 }
 
 .dropdown:hover .dropdown-content{display:block;}
-.submenu-item:hover .submenu{display:block;left:200px;top:0;}
-.chapter-item:hover .chapter-menu{display:block;left:200px;top:0;}
+.submenu-item:hover .submenu{display:block;left:230px;top:0;}
+.chapter-item:hover .chapter-menu{display:block;left:230px;top:0;}
 
 .dropdown-content a, .submenu a, .chapter-menu a{
-color:black;padding:5px;display:block;text-decoration:none;font-size:15px;
+color:#111;padding:7px;display:block;text-decoration:none;
+font-size:15px;font-family:'Roboto Slab',serif;font-weight:600;
+border-left:3px solid transparent;
+}
+.dropdown-content a:hover, .submenu a:hover, .chapter-menu a:hover{
+background:#eef4ff;border-left:3px solid #0047ab;
 }
 
-b{color:#0047ab;}
-
+/* MOBILE RESPONSIVE */
 @media(max-width:768px){
-nav{flex-direction:column;}
+nav{flex-direction:column;text-align:center;}
 .dropdown-content,.submenu,.chapter-menu{
-position:relative;box-shadow:none;width:100%;
-}
-.submenu-item:hover .submenu, .chapter-item:hover .chapter-menu{
-left:0;top:0;
+position:relative;left:0;top:0;box-shadow:none;width:100%;
 }
 }
 </style>
@@ -58,22 +74,23 @@ left:0;top:0;
 
 <body>
 
+<!-- 📧 TOP CONTACT BAR -->
 <header>
 <div>📧 corecoachingcentre@gmail.com</div>
-<div style="display:flex;gap:20px;">
-<a href="#">About</a>
-<a href="#">Class</a>
+<div style="display:flex;gap:22px;">
+<a href="#" style="color:#000;">About</a>
+<a href="#" style="color:#000;">Class</a>
 </div>
 </header>
 
-<div style="padding:10px 20px;font-size:32px;font-weight:700;color:#0047ab;">
-📘 BoardHub
-</div>
+<!-- 📘 MAIN LOGO -->
+<div class="logo">📘 BoardHub</div>
 
+<!-- 🌐 NAV BAR -->
 <nav>
 <a href="#">About Us</a>
 
-<!-- ================= NOTES MENU ================= -->
+<!-- ⭐ NOTES MENU -->
 <div class="dropdown">
 <a href="#">Notes ▼</a>
 <div class="dropdown-content">
@@ -84,37 +101,28 @@ left:0;top:0;
 
 <div class="chapter-item">Hindi ▶
 <div class="chapter-menu">
-<a href="#">Chapter 1</a><a href="#">Chapter 2</a><a href="#">Chapter 3</a>
-<a href="#">Chapter 4</a><a href="#">Chapter 5</a><a href="#">Chapter 6</a>
-<a href="#">Chapter 7</a><a href="#">Chapter 8</a><a href="#">Chapter 9</a>
-<a href="#">Chapter 10</a><a href="#">Chapter 11</a><a href="#">Chapter 12</a>
-<a href="#">Chapter 13</a><a href="#">Chapter 14</a>
+<a href="#">Ch 1</a><a href="#">Ch 2</a><a href="#">Ch 3</a>
+<a href="#">Ch 4</a><a href="#">Ch 5</a><a href="#">Ch 6</a>
+<a href="#">Ch 7</a><a href="#">Ch 8</a><a href="#">Ch 9</a>
+<a href="#">Ch 10</a><a href="#">Ch 11</a><a href="#">Ch 12</a>
+<a href="#">Ch 13</a><a href="#">Ch 14</a>
 </div></div>
 
-<div class="chapter-item">English ▶
-<div class="chapter-menu">
-<a href="#">Chapter 1</a><a href="#">Chapter 14</a>
-</div></div>
-
-<div class="chapter-item">Maths ▶
-<div class="chapter-menu"><a href="#">Chapter 1</a><a href="#">Chapter 14</a></div></div>
-
-<div class="chapter-item">Science ▶
-<div class="chapter-menu"><a href="#">Chapter 1</a><a href="#">Chapter 14</a></div></div>
-
-<div class="chapter-item">Social Science ▶
-<div class="chapter-menu"><a href="#">Chapter 1</a><a href="#">Chapter 14</a></div></div>
+<div class="chapter-item">English ▶<div class="chapter-menu"><a href="#">Ch 1–14</a></div></div>
+<div class="chapter-item">Maths ▶<div class="chapter-menu"><a href="#">Ch 1–14</a></div></div>
+<div class="chapter-item">Science ▶<div class="chapter-menu"><a href="#">Ch 1–14</a></div></div>
+<div class="chapter-item">Social Science ▶<div class="chapter-menu"><a href="#">Ch 1–14</a></div></div>
 
 </div></div>
 
 <!-- CLASS 10 -->
 <div class="submenu-item"><b>Class 10 ▶</b>
 <div class="submenu">
-<div class="chapter-item">Hindi ▶<div class="chapter-menu"><a href="#">Chapter 1–14</a></div></div>
-<div class="chapter-item">English ▶<div class="chapter-menu"><a href="#">Chapter 1–14</a></div></div>
-<div class="chapter-item">Maths ▶<div class="chapter-menu"><a href="#">Chapter 1–14</a></div></div>
-<div class="chapter-item">Science ▶<div class="chapter-menu"><a href="#">Chapter 1–14</a></div></div>
-<div class="chapter-item">Social Science ▶<div class="chapter-menu"><a href="#">Chapter 1–14</a></div></div>
+<div class="chapter-item">Hindi ▶<div class="chapter-menu"><a href="#">Ch 1–14</a></div></div>
+<div class="chapter-item">English ▶<div class="chapter-menu"><a href="#">Ch 1–14</a></div></div>
+<div class="chapter-item">Maths ▶<div class="chapter-menu"><a href="#">Ch 1–14</a></div></div>
+<div class="chapter-item">Science ▶<div class="chapter-menu"><a href="#">Ch 1–14</a></div></div>
+<div class="chapter-item">Social Science ▶<div class="chapter-menu"><a href="#">Ch 1–14</a></div></div>
 </div></div>
 
 <!-- CLASS 11 -->
@@ -142,23 +150,21 @@ left:0;top:0;
 </div>
 </div>
 
-<!-- ========== SHEETS MENU ========== -->
+<!-- 📄 SHEETS MENU -->
 <div class="dropdown">
 <a href="#">Sheets ▼</a>
 <div class="dropdown-content">
-<b>Sheets by Class</b>
 <a href="#">Class 9</a><a href="#">Class 10</a>
 <a href="#">Class 11</a><a href="#">Class 12</a>
 </div>
 </div>
 
-<!-- ========== SAMPLE PAPERS MENU ========== -->
+<!-- 📝 SAMPLE PAPERS MENU -->
 <div class="dropdown">
 <a href="#">Sample Papers ▼</a>
 <div class="dropdown-content">
 <b>CBSE</b>
-<a href="#">Class 10</a><a href="#">Class 12</a>
-<hr>
+<a href="#">Class 10</a><a href="#">Class 12</a><hr>
 <b>MP Board</b>
 <a href="#">Class 10</a><a href="#">Class 12</a>
 </div>
@@ -167,8 +173,13 @@ left:0;top:0;
 <a href="#">Updates</a>
 </nav>
 
-<h1 style="padding:20px;font-weight:600;color:#0047ab;">Welcome to BoardHub</h1>
-<p style="padding:0 20px;">Choose Class → Subject → Chapter to view notes (PDF View Only)</p>
+<!-- MAIN SECTION -->
+<h1 style="padding:25px;font-family:'Montserrat';color:#0047ab;">
+Welcome to BoardHub
+</h1>
+<p style="padding:0 25px;font-size:18px;">
+Choose Class → Subject → Chapter to view notes (PDF View Only)
+</p>
 
 </body>
 </html>
