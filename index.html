@@ -25,25 +25,66 @@ header{
 .email{font-size:15px;font-weight:600;color:#0a4fa3;}
 
 /* NAV MENU */
-nav{background:#0a4fa3;padding:10px 20px;}
-nav ul{list-style:none;display:flex;flex-wrap:wrap;gap:18px;color:white;font-weight:600;}
-nav ul li{position:relative;cursor:pointer;padding:6px 0;}
+nav{
+  background:#0a4fa3;
+  padding:12px 25px;
+}
+nav ul{
+  list-style:none;
+  display:flex;
+  flex-wrap:wrap;
+  gap:35px; /* Increased space between items */
+  color:white;
+  font-weight:600;
+  font-size:16px;
+}
+nav ul li{
+  position:relative;
+  cursor:pointer;
+  padding:6px 0;
+}
 
-/* DROPDOWN */
+/* DROPDOWN MENU */
 nav ul li ul{
-  display:none;flex-direction:column;background:white;position:absolute;top:32px;left:0;
-  padding:8px 0;min-width:200px;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.18);
+  display:none;
+  flex-direction:column;
+  background:white;
+  position:absolute;
+  top:35px;
+  left:0;
+  padding:8px 0;
+  min-width:200px;
+  border-radius:8px;
+  box-shadow:0 4px 14px rgba(0,0,0,0.18);
 }
-nav ul li:hover > ul,nav ul li:active > ul{display:flex;}
-nav ul li ul li{
-  padding:8px 12px;border-bottom:1px solid #e6e6e6;font-weight:500;color:black;
+nav ul li:hover > ul,
+nav ul li:active > ul{
+  display:flex;
 }
-nav ul li ul li:hover{background:#eaf0ff;color:#0a4fa3;font-weight:600;}
 
-/* MOBILE SAME STYLE */
+nav ul li ul li{
+  padding:8px 12px;
+  border-bottom:1px solid #e6e6e6;
+  font-weight:500;
+  color:black;
+}
+nav ul li ul li:hover{
+  background:#eaf0ff;
+  color:#0a4fa3;
+  font-weight:600;
+}
+
+/* MOBILE (same look, no hamburger) */
 @media(max-width:768px){
-  nav ul{flex-direction:column;gap:10px;}
-  nav ul li ul{position:static;box-shadow:none;width:100%;}
+  nav ul{
+    flex-direction:column;
+    gap:15px;
+  }
+  nav ul li ul{
+    position:static;
+    width:100%;
+    box-shadow:none;
+  }
 }
 </style>
 </head>
@@ -56,13 +97,11 @@ nav ul li ul li:hover{background:#eaf0ff;color:#0a4fa3;font-weight:600;}
 
 <nav>
 <ul>
-
   <li>About</li>
 
-  <!-- NOTES (Only till subjects, no chapters) -->
+  <!-- NOTES -->
   <li>Notes |
     <ul>
-      <!-- CLASS 9 -->
       <li>Class 9 |
         <ul>
           <li>Hindi</li>
@@ -72,8 +111,6 @@ nav ul li ul li:hover{background:#eaf0ff;color:#0a4fa3;font-weight:600;}
           <li>Social Science</li>
         </ul>
       </li>
-
-      <!-- CLASS 10 -->
       <li>Class 10 |
         <ul>
           <li>Hindi</li>
@@ -83,8 +120,6 @@ nav ul li ul li:hover{background:#eaf0ff;color:#0a4fa3;font-weight:600;}
           <li>Social Science</li>
         </ul>
       </li>
-
-      <!-- CLASS 11 -->
       <li>Class 11 |
         <ul>
           <li>Physics</li>
@@ -95,8 +130,6 @@ nav ul li ul li:hover{background:#eaf0ff;color:#0a4fa3;font-weight:600;}
           <li>Hindi</li>
         </ul>
       </li>
-
-      <!-- CLASS 12 -->
       <li>Class 12 |
         <ul>
           <li>Physics</li>
@@ -110,6 +143,7 @@ nav ul li ul li:hover{background:#eaf0ff;color:#0a4fa3;font-weight:600;}
     </ul>
   </li>
 
+  <!-- OTHER MENU ITEMS -->
   <li>Sheets</li>
   <li>Sample Papers</li>
   <li>Updates</li>
