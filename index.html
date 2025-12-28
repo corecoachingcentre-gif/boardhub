@@ -47,36 +47,28 @@ header img{
 header h2{margin-top:10px;font-weight:700;font-size:26px;}
 header p{font-size:17px;margin-top:5px;}
 
-/* 🔔 SCROLLING TICKER (MOVING TEXT) */
-.ticker{
-    background:#ffd60a;
-    color:#000;
-    font-weight:600;
-    padding:10px;
-    font-size:17px;
-    margin-top:0;
-    border-bottom:3px solid #0077b6;
-}
-.ticker marquee{
-    font-size:17px;
-}
-
-/* IMPORTANT UPDATES BOX */
-.update-box{
+/* NAV MENU */
+nav{
     background:white;
-    padding:18px;
-    margin:20px auto;
-    border-left:6px solid #0077b6;
-    max-width:900px;
-    border-radius:8px;
+    padding:15px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    border-bottom:4px solid #0077b6;
 }
-.update-box h3{
+nav a{
+    text-decoration:none;
+    font-weight:600;
+    padding:10px 18px;
+    border-radius:6px;
     color:#0077b6;
-    font-size:22px;
+    border:2px solid #0077b6;
+    transition:0.3s;
 }
-.update-box ul{
-    margin-top:10px;
-    line-height:1.6;
+nav a:hover{
+    background:#023e8a;
+    color:white;
 }
 
 /* SEARCH BAR */
@@ -125,14 +117,16 @@ header p{font-size:17px;margin-top:5px;}
   border-left:5px solid #0077b6;
 }
 
-/* RESPONSIVE LAPTOP */
+/* LAPTOP RESPONSIVE */
 @media (min-width:1024px){
   body{max-width:1200px;margin:auto;}
 }
 
-/* RESPONSIVE MOBILE */
+/* MOBILE RESPONSIVE */
 @media (max-width:600px){
   header h2{font-size:22px;}
+  nav{gap:10px;}
+  nav a{padding:8px 10px;}
 }
 
 /* FOOTER */
@@ -151,9 +145,16 @@ function toggleMenu(id){
   var menu=document.getElementById(id);
   menu.style.display = menu.style.display === "block" ? "none" : "block";
 }
+
+function scrollToClass(section){
+  document.getElementById(section).scrollIntoView({behavior:"smooth"});
+}
+
+/* SEARCH BAR SCRIPT */
 function searchContent(){
   let input = document.getElementById("searchInput").value.toLowerCase();
   let items = document.querySelectorAll(".dropdown, .dropdown-content li");
+  
   items.forEach(item=>{
     item.style.display = item.textContent.toLowerCase().includes(input) ? "block" : "none";
   });
@@ -163,7 +164,7 @@ function searchContent(){
 </head>
 <body>
 
-<!-- 🔷 TOP CONTACT BAR -->
+<!-- 🔷 TOP BAR -->
 <div class="topbar">
  📧 <a href="mailto:corecoachingcentre@gmail.com">corecoachingcentre@gmail.com</a> |
  📞 <a href="tel:+910000000000">+91 0000000000</a> |
@@ -177,27 +178,65 @@ function searchContent(){
   <p>📚 Notes • 🧾 PYQs • 📄 Sample Papers • 🆕 Latest Updates</p>
 </header>
 
-<!-- 🔔 SCROLLING NEWS TICKER -->
-<div class="ticker">
-<marquee behavior="scroll" direction="left">
-🔥 Class 10 & 12 Sample Papers Updated | 📘 New Notes Uploading Daily | 📝 Latest Syllabus Material Coming Soon | 🚀 Stay Connected for More!
-</marquee>
-</div>
-
-<!-- 🔥 IMPORTANT UPDATES BOX -->
-<section class="update-box">
-  <h3>🔔 Important Updates</h3>
-  <ul>
-    <li>📌 Class 10 Science Notes Updated (2025)</li>
-    <li>📌 MP Board Sample Papers 2025 Added</li>
-    <li>📌 Class 12 Physics Chapter 1 & 2 Notes Uploaded</li>
-    <li>📌 New PDFs uploading every week… stay connected!</li>
-  </ul>
-</section>
+<!-- 🔷 MENU -->
+<nav>
+  <a onclick="scrollToClass('c9')">Class 9</a>
+  <a onclick="scrollToClass('c10')">Class 10</a>
+  <a onclick="scrollToClass('c11')">Class 11</a>
+  <a onclick="scrollToClass('c12')">Class 12</a>
+  <a onclick="scrollToClass('samplepapers')">Sample Papers</a>
+</nav>
 
 <!-- 🔎 SEARCH BAR -->
 <div class="searchBox">
-  <input type="text" id="searchInput" placeholder="🔎 Search subject or class (e.g., Maths, Physics, Hindi)" onkeyup="searchContent()">
+  <input type="text" id="searchInput" placeholder="🔎 Search subjects like Maths, Science, Hindi..." onkeyup="searchContent()">
+</div>
+
+<!-- CLASS 9 -->
+<div class="dropdown" id="c9">
+<h3 onclick="toggleMenu('d9')">Class 9 ▼</h3>
+<div class="dropdown-content" id="d9">
+<p>Notes & Sheets 📚</p>
+<ul><li>📌 Hindi</li><li>📌 English</li><li>📌 Maths</li><li>📌 Science</li><li>📌 Social Science</li></ul>
+</div>
+</div>
+
+<!-- CLASS 10 -->
+<div class="dropdown" id="c10">
+<h3 onclick="toggleMenu('d10')">Class 10 ▼</h3>
+<div class="dropdown-content" id="d10">
+<p>Notes & Sheets 📚</p>
+<ul><li>📌 Hindi</li><li>📌 English</li><li>📌 Maths</li><li>📌 Science</li><li>📌 Social Science</li></ul>
+</div>
+</div>
+
+<!-- CLASS 11 -->
+<div class="dropdown" id="c11">
+<h3 onclick="toggleMenu('d11')">Class 11 ▼</h3>
+<div class="dropdown-content" id="d11">
+<p>Notes & Sheets 📘</p>
+<ul><li>📌 Hindi</li><li>📌 English</li><li>📌 Physics</li><li>📌 Chemistry</li><li>📌 Biology</li><li>📌 Maths</li></ul>
+</div>
+</div>
+
+<!-- CLASS 12 -->
+<div class="dropdown" id="c12">
+<h3 onclick="toggleMenu('d12')">Class 12 ▼</h3>
+<div class="dropdown-content" id="d12">
+<p>Notes & Sheets 📘</p>
+<ul><li>📌 Hindi</li><li>📌 English</li><li>📌 Physics</li><li>📌 Chemistry</li><li>📌 Biology</li><li>📌 Maths</li></ul>
+</div>
+</div>
+
+<!-- SAMPLE PAPER -->
+<div class="dropdown" id="samplepapers">
+<h3 onclick="toggleMenu('dsp')">📄 Sample Papers (CBSE + MP Board) ▼</h3>
+<div class="dropdown-content" id="dsp">
+<p>🟦 CBSE Board</p>
+<ul><li>📌 Class 10</li><li>📌 Class 12</li></ul>
+<p>🟩 MP Board</p>
+<ul><li>📌 Class 10</li><li>📌 Class 12</li></ul>
+</div>
 </div>
 
 <!-- FOOTER -->
@@ -211,3 +250,4 @@ function searchContent(){
 
 </body>
 </html>
+
