@@ -13,110 +13,185 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{
     font-family:'Poppins',sans-serif;
-    background:#F1F5F9;
-    color:#1B1B1B;
+    background:#F6F3FF; /* Light Purple Background */
+    color:#2A2A2A;
 }
 
 /* HEADER */
 header{
-    background:#0057D9;
+    background:#5A189A; /* Main New Color */
     padding:25px;
     text-align:center;
     color:white;
 }
-header h1{font-size:40px;font-weight:700;margin-bottom:8px;}
+header h1{font-size:42px;font-weight:700;margin-bottom:8px;}
 header p{font-size:17px;font-weight:400;}
 
-/* MENU */
+/* NAV MENU */
 nav{
-    background:white;
+    background:#FFFFFF;
     padding:15px;
     display:flex;
+    flex-wrap:wrap;
     justify-content:center;
-    gap:20px;
-    border-bottom:3px solid #0057D9;
+    gap:15px;
+    border-bottom:4px solid #5A189A;
 }
 nav a{
     text-decoration:none;
     font-weight:600;
-    padding:8px 15px;
+    padding:10px 18px;
     border-radius:6px;
-    color:#0057D9;
-    border:2px solid #0057D9;
+    color:#5A189A;
+    border:2px solid #5A189A;
     transition:0.3s;
 }
 nav a:hover{
-    background:#0057D9;
+    background:#5A189A;
     color:white;
 }
 
-/* SECTION */
-.section{
-    text-align:center;
-    padding:40px 20px;
+/* DROPDOWN SECTION */
+.dropdown {
+  width:90%;
+  max-width:500px;
+  background:white;
+  margin:20px auto;
+  border-radius:10px;
+  padding:15px;
+  border:2px solid #5A189A;
 }
-.section h2{
-    color:#0057D9;
-    font-size:32px;
-    margin-bottom:10px;
+
+.dropdown h3{
+  font-size:20px;
+  margin-bottom:10px;
+  cursor:pointer;
+  background:#5A189A;
+  color:white;
+  padding:10px;
+  border-radius:8px;
 }
-.section p{
-    font-size:16px;
-    max-width:650px;
-    margin:auto;
+
+.dropdown-content{
+  display:none;
+  padding:10px;
+}
+
+.dropdown-content p{
+  font-weight:600;
+  margin-bottom:8px;
+  color:#5A189A;
+  font-size:18px;
+}
+
+.dropdown-content ul{
+  margin-left:20px;
+}
+
+.dropdown-content li{
+  margin:5px 0;
+  padding:6px;
+  background:#F3E8FF;
+  border-radius:6px;
+  list-style:square;
+  border-left:5px solid #5A189A;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width:600px){
+  header h1{font-size:30px;}
+  nav{gap:10px;}
+  nav a{padding:8px 10px;}
 }
 </style>
+
+<script>
+// SIMPLE DROPDOWN CLICK FUNCTION
+function toggleMenu(id){
+  var menu=document.getElementById(id);
+  menu.style.display = menu.style.display === "block" ? "none":"block";
+}
+</script>
 </head>
 <body>
 
 <header>
-  <h1>💡BOARD HUB</h1>
-  <p>📚Notes • 🧾PYQs • 🧾Sample Papers •🆕 updates</p>
+  <h1>💡 BOARD HUB</h1>
+  <p>📚Notes • 🧾PYQs • 📄Sample Papers • 🆕 Updates</p>
 </header>
 
 <nav>
-  <a href="#class9">Class 9</a>
-  <a href="#class10">Class 10</a>
-  <a href="#class11">Class 11</a>
-  <a href="#class12">Class 12</a>
+  <a onclick="scrollToClass('c9')">Class 9</a>
+  <a onclick="scrollToClass('c10')">Class 10</a>
+  <a onclick="scrollToClass('c11')">Class 11</a>
+  <a onclick="scrollToClass('c12')">Class 12</a>
 </nav>
 
-<div class="section">
-<h2>Welcome to Board Hub</h2>
-<p>⭐ Best Website Description for Board Hub
-
-Board Hub is an online learning platform designed for students of Class 9 to 12 (CBSE & State Board). We provide high-quality study resources that make exam preparation easier, smarter, and more effective. Our mission is to support every student with the right guidance, updated notes, and real exam-based material so learning becomes simple and scoring high marks becomes possible.
-
-📌 What We Provide
-
-📚 Class-wise & subject-wise organized study notes
-
-📝 Previous Year Question Papers (PYQs) with patterns & solutions
-
-📄 Sample Papers & Practice Sets for exam readiness
-
-🆕 Latest Board Updates & syllabus changes
-
-🧠 Concept clarity with easy explanations & exam-focused points
-
-🎯 Why Board Hub?
-
-✔ Student-friendly notes (simple language)
-
-✔ Useful for revision & last-minute preparation
-
-✔ Free access to learning content
-
-✔ Regular updates based on board guidelines
-
-✔ Perfect for self-study, tuition support, and exam practice
-
-✨ Whether you're preparing for school exams, pre-boards, or final board exams —
-Board Hub is your one-stop platform for success.
-
-📌 Learn Smart. Score Better. Succeed Faster. — With Board Hub.</p>
+<!-- CLASS 9 -->
+<div class="dropdown" id="c9">
+<h3 onclick="toggleMenu('d9')">Class 9 ▼</h3>
+<div class="dropdown-content" id="d9">
+<p>Notes & Sheets 📚</p>
+<ul>
+<li>📌 Hindi</li>
+<li>📌 English</li>
+<li>📌 Maths</li>
+<li>📌 Science</li>
+<li>📌 Social Science</li>
+</ul>
 </div>
+</div>
+
+<!-- CLASS 10 -->
+<div class="dropdown" id="c10">
+<h3 onclick="toggleMenu('d10')">Class 10 ▼</h3>
+<div class="dropdown-content" id="d10">
+<p>Notes & Sheets 📚</p>
+<ul>
+<li>📌 Hindi</li>
+<li>📌 English</li>
+<li>📌 Maths</li>
+<li>📌 Science</li>
+<li>📌 Social Science</li>
+</ul>
+</div>
+</div>
+
+<!-- CLASS 11 -->
+<div class="dropdown" id="c11">
+<h3 onclick="toggleMenu('d11')">Class 11 ▼</h3>
+<div class="dropdown-content" id="d11">
+<p>Notes & Sheets 📘</p>
+<ul>
+<li>📌 Hindi</li>
+<li>📌 English</li>
+<li>📌 Physics</li>
+<li>📌 Chemistry</li>
+<li>📌 Biology</li>
+<li>📌 Maths</li>
+</ul>
+</div>
+</div>
+
+<!-- CLASS 12 -->
+<div class="dropdown" id="c12">
+<h3 onclick="toggleMenu('d12')">Class 12 ▼</h3>
+<div class="dropdown-content" id="d12">
+<p>Notes & Sheets 📘</p>
+<ul>
+<li>📌 Hindi</li>
+<li>📌 English</li>
+<li>📌 Physics</li>
+<li>📌 Chemistry</li>
+<li>📌 Biology</li>
+<li>📌 Maths</li>
+</ul>
+</div>
+</div>
+
+<script>
+function scrollToClass(section){ document.getElementById(section).scrollIntoView({behavior:"smooth"}); }
+</script>
 
 </body>
 </html>
-
