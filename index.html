@@ -1,48 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BoardHub - Home
-<nav style="background:#0a4ea3;padding:12px;display:flex;gap:30px;">
-    <a href="#" style="color:white;text-decoration:none;font-size:17px;">About Us</a>
+<title>BoardHub - Home</title>
 
-    <div class="dropdown">
-        <a href="#" style="color:white;text-decoration:none;font-size:17px;">Notes ▼</a>
-        <div class="dropdown-content" style="display:none;position:absolute;background:white;padding:10px;border-radius:6px;width:200px;">
-           <b>Class 9</b>
-           <a href="#">Hindi</a><a href="#">English</a><a href="#">Maths</a><a href="#">Science</a><a href="#">Social Science</a><hr>
-           <b>Class 10</b>
-           <a href="#">Hindi</a><a href="#">English</a><a href="#">Maths</a><a href="#">Science</a><a href="#">Social Science</a>
-        </div>
-    </div>
-
-    <a href="#" style="color:white;text-decoration:none;font-size:17px;">Sheets</a>
-    <a href="#" style="color:white;text-decoration:none;font-size:17px;">Sample Paper</a>
-    <a href="#" style="color:white;text-decoration:none;font-size:17px;">Updates</a>
-</nav>
-</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
+header{
+background:#ffffff;padding:10px 20px;display:flex;
+justify-content:space-between;align-items:center;border-bottom:1px solid #dcdcdc;
+}
+nav{
+background:#0a4ea3;padding:12px;display:flex;gap:30px;flex-wrap:wrap;
+}
+nav a{color:white;text-decoration:none;font-size:17px;}
+.dropdown{position:relative;}
+.dropdown-content{
+display:none;position:absolute;background:white;color:black;
+padding:10px;border-radius:6px;top:30px;width:220px;
+box-shadow:0 3px 10px rgba(0,0,0,0.2);
+}
+.dropdown:hover .dropdown-content{display:block;}
+.dropdown-content a{display:block;color:black;padding:5px;text-decoration:none;}
+.dropdown-content b{color:#0047ab;}
+body{padding:0;margin:0;}
+@media(max-width:768px){
+nav{flex-direction:column;text-align:center;}
+.dropdown-content{position:relative;width:100%;}
+}
+</style>
 </head>
+
 <body>
-<header style="background:#ffffff;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #dcdcdc;">
-    <div style="font-size:14px;color:#333;">
-        📧 corecoachingcentre@gmail.com
-    </div>
-    <div style="display:flex;gap:20px;">
-        <a href="#" style="text-decoration:none;color:#000;font-size:16px;">About</a>
-        <a href="#" style="text-decoration:none;color:#000;font-size:16px;">Class</a>
-    </div>
+
+<!-- TOP EMAIL + ABOUT CLASS -->
+<header>
+<div style="font-size:14px;color:#333;">📧 corecoachingcentre@gmail.com</div>
+<div style="display:flex;gap:20px;">
+<a href="#" style="color:#000;">About</a>
+<a href="#" style="color:#000;">Class</a>
+</div>
 </header>
-<div style="padding:10px 20px;font-size:32px;font-weight:bold;color:#0047ab;display:flex;align-items:center;gap:10px;">
-    📘 BoardHub
+
+<!-- LOGO -->
+<div style="padding:10px 20px;font-size:32px;font-weight:bold;color:#0047ab;">
+📘 BoardHub
 </div>
 
-<h1>Welcome to BoardHub Website</h1>
-<p></p>
-<style>
-.dropdown{position:relative;}
-.dropdown:hover .dropdown-content{display:block;}
-.dropdown-content a{display:block;color:black;text-decoration:none;padding:4px;}
-</style>
+<!-- NAVIGATION MENU -->
+<nav>
+
+<a href="#">About Us</a>
+
+<div class="dropdown">
+<a href="#">Notes ▼</a>
+<div class="dropdown-content">
+
+<b>Class 9</b>
+<a href="#">Hindi</a><a href="#">English</a><a href="#">Maths</a><a href="#">Science</a><a href="#">Social Science</a><hr>
+
+<b>Class 10</b>
+<a href="#">Hindi</a><a href="#">English</a><a href="#">Maths</a><a href="#">Science</a><a href="#">Social Science</a><hr>
+
+<b>Class 11</b>
+<a href="#">Hindi</a><a href="#">English</a><a href="#">Maths</a><a href="#">Biology</a><a href="#">Physics</a><a href="#">Chemistry</a><hr>
+
+<b>Class 12</b>
+<a href="#">Hindi</a><a href="#">English</a><a href="#">Maths</a><a href="#">Biology</a><a href="#">Physics</a><a href="#">Chemistry</a>
+</div>
+</div>
+
+
+<div class="dropdown">
+<a href="#">Sheets ▼</a>
+<div class="dropdown-content">
+<b>Class 9 - 12 Sheets</b>
+<a href="#">Class 9</a>
+<a href="#">Class 10</a>
+<a href="#">Class 11</a>
+<a href="#">Class 12</a>
+</div>
+</div>
+
+<div class="dropdown">
+<a href="#">Sample Papers ▼</a>
+<div class="dropdown-content">
+<b>CBSE</b>
+<a href="#">Class 10</a>
+<a href="#">Class 12</a>
+<hr>
+<b>MP Board</b>
+<a href="#">Class 10</a>
+<a href="#">Class 12</a>
+</div>
+</div>
+
+<a href="#">Updates</a>
+</nav>
+
+<!-- MAIN SECTION -->
+<h1 style="padding:20px;">Welcome to BoardHub</h1>
+<p style="padding:0 20px;">Study material for Class 9 to 12 - Notes, Sheets, Sample Papers (PDF View Only)</p>
 
 </body>
 </html>
+
