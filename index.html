@@ -1,20 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Board Hub - Study Material</title>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Board Hub - Study Material</title>
+
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* GLOBAL */
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+    font-family:'Poppins',sans-serif;
+    background:#F1F5F9;
+    color:#1B1B1B;
+}
+
+/* HEADER */
+header{
+    background:#0057D9;
+    padding:25px;
+    text-align:center;
+    color:white;
+}
+header h1{font-size:40px;font-weight:700;margin-bottom:8px;}
+header p{font-size:17px;font-weight:400;}
+
+/* MENU */
+nav{
+    background:white;
+    padding:15px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    border-bottom:3px solid #0057D9;
+}
+nav a{
+    text-decoration:none;
+    font-weight:600;
+    padding:8px 15px;
+    border-radius:6px;
+    color:#0057D9;
+    border:2px solid #0057D9;
+    transition:0.3s;
+}
+nav a:hover{
+    background:#0057D9;
+    color:white;
+}
+
+/* SECTION */
+.section{
+    text-align:center;
+    padding:40px 20px;
+}
+.section h2{
+    color:#0057D9;
+    font-size:32px;
+    margin-bottom:10px;
+}
+.section p{
+    font-size:16px;
+    max-width:650px;
+    margin:auto;
+}
+</style>
 </head>
 <body>
-<h1>Welcome to Board Hub</h1>
-<p>Study Material | Notes | PYQs | Sample Papers | Class 9 to 12</p>
 
-<ul>
-<li><a href="#">Class 9</a></li>
-<li><a href="#">Class 10</a></li>
-<li><a href="#">Class 11</a></li>
-<li><a href="#">Class 12</a></li>
-</ul>
+<header>
+  <h1>BOARD HUB</h1>
+  <p>Notes • PYQs • Sample Papers • Class 9 to 12</p>
+</header>
 
-<p>More content coming soon...</p>
+<nav>
+  <a href="#class9">Class 9</a>
+  <a href="#class10">Class 10</a>
+  <a href="#class11">Class 11</a>
+  <a href="#class12">Class 12</a>
+</nav>
+
+<div class="section">
+<h2>Welcome to Board Hub</h2>
+<p>Your free platform for CBSE & State Board notes, sample papers, and exam preparation.</p>
+</div>
+
 </body>
 </html>
+
