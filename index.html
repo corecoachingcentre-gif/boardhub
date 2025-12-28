@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BoardHub - Home</title>
 
-<!-- GOOGLE FONT SAME AS IMAGE -->
+<!-- GOOGLE FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 /* GLOBAL */
 *{margin:0;padding:0;box-sizing:border-box;}
 body{
-    font-family: 'Poppins', sans-serif;
+    font-family:'Poppins',sans-serif;
     background:#f4f7fc;
     color:#0a2d5f;
 }
@@ -42,19 +42,21 @@ body{
     font-weight:700;
     color:#0b3c8c;
     display:flex;
-    align-items:center;
     gap:8px;
+    align-items:center;
 }
 
-/* BLUE NAVBAR - NO DROPDOWN */
+/* NAVBAR */
 .navbar{
     background:#0a4db3;
     padding:14px 30px;
+    position:relative;
 }
 .navbar ul{
     list-style:none;
     display:flex;
     gap:35px;
+    flex-wrap:wrap;
 }
 .navbar a{
     color:white;
@@ -63,8 +65,47 @@ body{
     cursor:pointer;
     font-size:16px;
 }
-.navbar a:hover{
-    text-decoration:underline;
+.navbar li{
+    position:relative;
+}
+
+/* MAIN DROPDOWN */
+.dropdown{
+    display:none;
+    position:absolute;
+    background:white;
+    padding:20px;
+    top:40px;
+    border-radius:8px;
+    box-shadow:0 8px 18px rgba(0,0,0,0.18);
+    min-width:230px;
+    z-index:10;
+}
+.navbar li:hover .dropdown{display:flex;gap:20px;}
+
+/* COLUMN STYLING */
+.dropdown-column{
+    border-right:2px solid #d6daf7;
+    padding-right:10px;
+}
+.dropdown-column:last-child{
+    border-right:none;
+}
+.dropdown h4{
+    font-size:14px;
+    margin-bottom:10px;
+    color:#0a4db3;
+    font-weight:600;
+}
+.dropdown a{
+    display:block;
+    font-size:14px;
+    padding:6px 0;
+    color:#0a4db3;
+}
+.dropdown a:hover{
+    background:#eaf0ff;
+    border-radius:4px;
 }
 
 /* HERO SECTION */
@@ -73,6 +114,7 @@ body{
     justify-content:space-between;
     padding:50px 30px;
     background:white;
+    flex-wrap:wrap;
 }
 .hero-text h1{
     font-size:42px;
@@ -94,25 +136,33 @@ body{
     font-weight:600;
 }
 
-/* UPDATE BOX */
+/* LATEST UPDATE BOX */
 .update-box{
     background:white;
-    width:260px;
+    width:270px;
     padding:20px;
     border-radius:12px;
     box-shadow:0 5px 18px rgba(0,0,0,0.1);
+    margin-top:10px;
 }
 .update-box h3{
     font-size:19px;
     margin-bottom:10px;
     color:#0b3c8c;
 }
-.update-box ul{
-    margin-top:10px;
-}
 .update-box li{
     margin:10px 0;
     color:#0a3a7a;
+}
+
+/* MOBILE RESPONSIVE */
+@media(max-width:768px){
+    .navbar ul{flex-direction:column;gap:15px;}
+    .dropdown{position:static;display:none;box-shadow:none;}
+    .navbar li:hover .dropdown{display:block;}
+    .hero{flex-direction:column;align-items:center;text-align:center;}
+    .hero-text p{width:100%;}
+    .update-box{margin-top:30px;}
 }
 </style>
 </head>
@@ -129,14 +179,62 @@ body{
     <div class="logo">📘 BoardHub</div>
 </div>
 
-<!-- SIMPLE BLUE MENU -->
+<!-- NAVIGATION BAR WITH DROPDOWN -->
 <div class="navbar">
     <ul>
+
         <li><a>About Us</a></li>
-        <li><a>Notes</a></li>
-        <li><a>Sheets</a></li>
-        <li><a>Sample Paper</a></li>
+
+        <!-- NOTES DROPDOWN -->
+        <li><a>Notes ▼</a>
+            <div class="dropdown">
+                <div class="dropdown-column">
+                    <h4>Class 9</h4>
+                    <a>Hindi</a><a>English</a><a>Maths</a><a>Science</a><a>Social Science</a>
+                    <h4>Class 10</h4>
+                    <a>Hindi</a><a>English</a><a>Maths</a><a>Science</a><a>Social Science</a>
+                </div>
+                <div class="dropdown-column">
+                    <h4>Class 11</h4>
+                    <a>Hindi</a><a>English</a><a>Maths</a><a>Physics</a><a>Chemistry</a><a>Biology</a>
+                    <h4>Class 12</h4>
+                    <a>Hindi</a><a>English</a><a>Maths</a><a>Physics</a><a>Chemistry</a><a>Biology</a>
+                </div>
+            </div>
+        </li>
+
+        <!-- SHEETS MENU -->
+        <li><a>Sheets ▼</a>
+            <div class="dropdown">
+                <div class="dropdown-column">
+                    <h4>Class 9 - 10</h4>
+                    <a>Hindi</a><a>English</a><a>Maths</a><a>Science</a><a>Social Science</a>
+                </div>
+                <div class="dropdown-column">
+                    <h4>Class 11 - 12</h4>
+                    <a>Hindi</a><a>English</a><a>Maths</a><a>Physics</a><a>Chemistry</a><a>Biology</a>
+                </div>
+            </div>
+        </li>
+
+        <!-- SAMPLE PAPER -->
+        <li><a>Sample Paper ▼</a>
+            <div class="dropdown">
+                <div class="dropdown-column">
+                    <h4>MP Board</h4>
+                    <a>Class 10</a>
+                    <a>Class 12</a>
+                </div>
+                <div class="dropdown-column">
+                    <h4>CBSE Board</h4>
+                    <a>Class 10</a>
+                    <a>Class 12</a>
+                </div>
+            </div>
+        </li>
+
         <li><a>Updates</a></li>
+
     </ul>
 </div>
 
