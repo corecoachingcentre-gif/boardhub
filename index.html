@@ -47,28 +47,23 @@ header img{
 header h2{margin-top:10px;font-weight:700;font-size:26px;}
 header p{font-size:17px;margin-top:5px;}
 
-/* NAV MENU */
-nav{
+/* IMPORTANT UPDATE SECTION */
+.update-box{
     background:white;
-    padding:15px;
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:15px;
-    border-bottom:4px solid #0077b6;
+    padding:18px;
+    margin:20px auto;
+    border-left:6px solid #0077b6;
+    max-width:900px;
+    border-radius:8px;
 }
-nav a{
-    text-decoration:none;
-    font-weight:600;
-    padding:10px 18px;
-    border-radius:6px;
+.update-box h3{
     color:#0077b6;
-    border:2px solid #0077b6;
-    transition:0.3s;
+    font-size:22px;
+    margin-bottom:10px;
 }
-nav a:hover{
-    background:#023e8a;
-    color:white;
+.update-box ul{
+    margin-left:20px;
+    line-height:1.6;
 }
 
 /* SEARCH BAR */
@@ -117,16 +112,14 @@ nav a:hover{
   border-left:5px solid #0077b6;
 }
 
-/* LAPTOP RESPONSIVE */
+/* RESPONSIVE LAPTOP */
 @media (min-width:1024px){
   body{max-width:1200px;margin:auto;}
 }
 
-/* MOBILE RESPONSIVE */
+/* RESPONSIVE MOBILE */
 @media (max-width:600px){
   header h2{font-size:22px;}
-  nav{gap:10px;}
-  nav a{padding:8px 10px;}
 }
 
 /* FOOTER */
@@ -144,20 +137,6 @@ footer a{color:yellow;text-decoration:none;}
 function toggleMenu(id){
   var menu=document.getElementById(id);
   menu.style.display = menu.style.display === "block" ? "none" : "block";
-}
-
-function scrollToClass(section){
-  document.getElementById(section).scrollIntoView({behavior:"smooth"});
-}
-
-/* SEARCH BAR SCRIPT */
-function searchContent(){
-  let input = document.getElementById("searchInput").value.toLowerCase();
-  let items = document.querySelectorAll(".dropdown, .dropdown-content li");
-  
-  items.forEach(item=>{
-    item.style.display = item.textContent.toLowerCase().includes(input) ? "block" : "none";
-  });
 }
 </script>
 
@@ -178,25 +157,26 @@ function searchContent(){
   <p>📚 Notes • 🧾 PYQs • 📄 Sample Papers • 🆕 Latest Updates</p>
 </header>
 
-<!-- 🔷 MENU -->
-<nav>
-  <a onclick="scrollToClass('c9')">Class 9</a>
-  <a onclick="scrollToClass('c10')">Class 10</a>
-  <a onclick="scrollToClass('c11')">Class 11</a>
-  <a onclick="scrollToClass('c12')">Class 12</a>
-  <a onclick="scrollToClass('samplepapers')">Sample Papers</a>
-</nav>
+<!-- 🔔 IMPORTANT UPDATES (New Section) -->
+<section class="update-box">
+  <h3>🔔 Important Updates</h3>
+  <ul>
+    <li>📌 Class 10 Science Notes Updated (2025)</li>
+    <li>📌 MP Board Sample Papers Added</li>
+    <li>📌 Class 12 Physics Chapter 1 PDF Uploaded</li>
+    <li>📌 New study materials uploading every week!</li>
+  </ul>
+</section>
 
 <!-- 🔎 SEARCH BAR -->
 <div class="searchBox">
-  <input type="text" id="searchInput" placeholder="🔎 Search subjects like Maths, Science, Hindi..." onkeyup="searchContent()">
+  <input type="text" id="searchInput" placeholder="🔎 Search notes, subjects, or classes...">
 </div>
 
 <!-- CLASS 9 -->
 <div class="dropdown" id="c9">
 <h3 onclick="toggleMenu('d9')">Class 9 ▼</h3>
 <div class="dropdown-content" id="d9">
-<p>Notes & Sheets 📚</p>
 <ul><li>📌 Hindi</li><li>📌 English</li><li>📌 Maths</li><li>📌 Science</li><li>📌 Social Science</li></ul>
 </div>
 </div>
@@ -205,7 +185,6 @@ function searchContent(){
 <div class="dropdown" id="c10">
 <h3 onclick="toggleMenu('d10')">Class 10 ▼</h3>
 <div class="dropdown-content" id="d10">
-<p>Notes & Sheets 📚</p>
 <ul><li>📌 Hindi</li><li>📌 English</li><li>📌 Maths</li><li>📌 Science</li><li>📌 Social Science</li></ul>
 </div>
 </div>
@@ -214,7 +193,6 @@ function searchContent(){
 <div class="dropdown" id="c11">
 <h3 onclick="toggleMenu('d11')">Class 11 ▼</h3>
 <div class="dropdown-content" id="d11">
-<p>Notes & Sheets 📘</p>
 <ul><li>📌 Hindi</li><li>📌 English</li><li>📌 Physics</li><li>📌 Chemistry</li><li>📌 Biology</li><li>📌 Maths</li></ul>
 </div>
 </div>
@@ -223,7 +201,6 @@ function searchContent(){
 <div class="dropdown" id="c12">
 <h3 onclick="toggleMenu('d12')">Class 12 ▼</h3>
 <div class="dropdown-content" id="d12">
-<p>Notes & Sheets 📘</p>
 <ul><li>📌 Hindi</li><li>📌 English</li><li>📌 Physics</li><li>📌 Chemistry</li><li>📌 Biology</li><li>📌 Maths</li></ul>
 </div>
 </div>
@@ -232,10 +209,10 @@ function searchContent(){
 <div class="dropdown" id="samplepapers">
 <h3 onclick="toggleMenu('dsp')">📄 Sample Papers (CBSE + MP Board) ▼</h3>
 <div class="dropdown-content" id="dsp">
-<p>🟦 CBSE Board</p>
-<ul><li>📌 Class 10</li><li>📌 Class 12</li></ul>
-<p>🟩 MP Board</p>
-<ul><li>📌 Class 10</li><li>📌 Class 12</li></ul>
+<p>CBSE Board</p>
+<ul><li>Class 10</li><li>Class 12</li></ul>
+<p>MP Board</p>
+<ul><li>Class 10</li><li>Class 12</li></ul>
 </div>
 </div>
 
@@ -250,4 +227,3 @@ function searchContent(){
 
 </body>
 </html>
-
