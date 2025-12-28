@@ -3,10 +3,26 @@
 body{background:#eef3ff; color:#222;}
 
 /* HEADER */
-header{background:#0047b3; padding:20px; display:flex; justify-content:space-between; align-items:center;}
+header{
+    background:#0047b3;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position: fixed;          /* ADDED */
+    top: 0;                   /* ADDED */
+    left: 0;                  /* ADDED */
+    width: 100%;              /* ADDED */
+    z-index: 999;             /* ADDED */
+}
 header .logo{color:white; font-size:26px; font-weight:bold;}
 nav a{color:white; margin:0 10px; text-decoration:none; font-weight:600;}
 nav .btn{background:white; color:#0047b3; padding:5px 12px; border-radius:5px;}
+
+/* MOVE CONTENT DOWN BELOW FIXED NAVBAR */
+main, .class-menu, .hero{
+    margin-top:120px;       /* ADDED FIX */
+}
 
 /* HERO SECTION */
 .hero{text-align:center; padding:60px 20px; background:white;}
@@ -21,6 +37,3 @@ nav .btn{background:white; color:#0047b3; padding:5px 12px; border-radius:5px;}
 
 /* FOOTER */
 footer{background:#111; color:white; text-align:center; padding:15px; margin-top:40px;}
-body main {
-    margin-top: 80px; /* pushes page content down under navbar */}
-
