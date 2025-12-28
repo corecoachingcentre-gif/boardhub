@@ -1,113 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> <style>
-.navbar{background:#1a73e8;padding:10px;border-radius:6px;width:300px;}
-.navbar ul{list-style:none;padding:0;margin:0;}
-.navbar ul li{position:relative;}
-.navbar ul li a{color:#fff;padding:10px;display:block;text-decoration:none;cursor:pointer;}
-.navbar ul li:hover{background:#1456ad;}
-.navbar ul li ul{display:none;background:#297cea;border-radius:6px;position:relative;padding-left:10px;}
-.navbar ul li:hover ul{display:block;}
-</style>
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Board Hub | Class 9 to 12 Study Material</title>
-<link rel="stylesheet" href="assets/style.css">
-<style>
-.class-menu {
-    margin-top: 80px; /* move dropdowns down below the blue navbar */
-}
-</style>
+<title>BoardHub - Study Material</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="navbar">
-  <ul>
-    <li><a>Class 9th ▼</a>
-      <ul>
-        <li><a href="#">Biology</a></li>
-        <li><a href="#">Maths</a></li>
-        <li><a href="#">Physics</a></li>
-        <li><a href="#">Chemistry</a></li>
-        <li><a href="#">English</a></li>
-        <li><a href="#">Hindi</a></li>
-      </ul>
-    </li>
 
-    <li><a>Class 10th ▼</a>
-      <ul>
-        <li><a href="#">Biology</a></li>
-        <li><a href="#">Maths</a></li>
-        <li><a href="#">Physics</a></li>
-        <li><a href="#">Chemistry</a></li>
-        <li><a href="#">English</a></li>
-        <li><a href="#">Hindi</a></li>
-      </ul>
-    </li>
-
-    <li><a>Class 11th ▼</a>
-      <ul>
-        <li><a href="#">Biology</a></li>
-        <li><a href="#">Maths</a></li>
-        <li><a href="#">Physics</a></li>
-        <li><a href="#">Chemistry</a></li>
-        <li><a href="#">English</a></li>
-        <li><a href="#">Hindi</a></li>
-      </ul>
-    </li>
-
-    <li><a>Class 12th ▼</a>
-      <ul>
-        <li><a href="#">Biology</a></li>
-        <li><a href="#">Maths</a></li>
-        <li><a href="#">Physics</a></li>
-        <li><a href="#">Chemistry</a></li>
-        <li><a href="#">English</a></li>
-        <li><a href="#">Hindi</a></li>
-      </ul>
-    </li>
-  </ul>
-</div>
-    
-
-<!-- HEADER -->
+<!-- HEADER / NAVBAR -->
 <header>
-    <div class="logo">BOARD HUB</div>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="classes.html">Classes/Subjects</a>
-        <a href="online.html">Online Classes</a>
-        <a href="updates.html">Updates</a>
-        <a href="contact.html" class="btn">Contact</a>
-    </nav>
+  <div class="logo">BOARD HUB</div>
+
+  <!-- HAMBURGER FOR MOBILE -->
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+  <nav id="menu">
+    <a href="#">Home</a>
+    <a href="#">Notes</a>
+    <a href="#">Sample Papers</a>
+    <a href="#">PYQs</a>
+    <a href="#">Contact</a>
+    <a class="btn" href="#">Login</a>
+  </nav>
 </header>
 
-<!-- HERO SECTION -->
+<!-- MAIN CONTENT -->
+<main>
 <section class="hero">
-    <h1>Welcome to Board Hub</h1>
-    <p>Class 9–12 Study Material | CBSE & MP Board | Notes, PYQs, Sample Papers & Guidance</p>
-    <a href="classes.html" class="cta">Start Learning</a>
+  <h1>Welcome to Board Hub</h1>
+  <p>CBSE & State Board Class 9th to 12th Study Material, Notes & PYQs.</p>
+  <a href="#" class="cta">Start Learning</a>
 </section>
 
-<!-- FEATURES -->
 <section class="features">
-    <div class="box">
-        <h3>📚 Study Notes</h3>
-        <p>Easy notes for Class 9–12 to boost exam preparation.</p>
-    </div>
-    <div class="box">
-        <h3>📝 PYQs</h3>
-        <p>Previous year board question papers for revision.</p>
-    </div>
-    <div class="box">
-        <h3>🎥 Online Classes</h3>
-        <p>Join live/recorded classes for difficult concepts.</p>
-    </div>
+  <div class="box">
+    <h3>Notes & NCERT</h3>
+    <p>Easy and exam-based notes for all classes.</p>
+  </div>
+  <div class="box">
+    <h3>Sample Papers</h3>
+    <p>Practice with CBSE & MP Board patterns.</p>
+  </div>
+  <div class="box">
+    <h3>PYQs & Solutions</h3>
+    <p>Past years solved question papers.</p>
+  </div>
 </section>
+</main>
 
+<!-- FOOTER -->
 <footer>
-    <p>© 2025 Board Hub | All Rights Reserved</p>
+  © 2025 BOARD HUB | All Rights Reserved
 </footer>
+
+<!-- 📚 CLASS & SUBJECT DROPDOWNS AT BOTTOM -->
+<div class="class-menu">
+  
+  <details>
+    <summary>Class 9th ▼</summary>
+    <a href="#">Biology</a>
+    <a href="#">Maths</a>
+    <a href="#">Physics</a>
+    <a href="#">Chemistry</a>
+    <a href="#">Hindi</a>
+    <a href="#">English</a>
+  </details>
+
+  <details>
+    <summary>Class 10th ▼</summary>
+    <a href="#">Biology</a>
+    <a href="#">Maths</a>
+    <a href="#">Physics</a>
+    <a href="#">Chemistry</a>
+    <a href="#">Hindi</a>
+    <a href="#">English</a>
+  </details>
+
+  <details>
+    <summary>Class 11th ▼</summary>
+    <a href="#">Biology</a>
+    <a href="#">Maths</a>
+    <a href="#">Physics</a>
+    <a href="#">Chemistry</a>
+    <a href="#">Hindi</a>
+    <a href="#">English</a>
+  </details>
+
+  <details>
+    <summary>Class 12th ▼</summary>
+    <a href="#">Biology</a>
+    <a href="#">Maths</a>
+    <a href="#">Physics</a>
+    <a href="#">Chemistry</a>
+    <a href="#">Hindi</a>
+    <a href="#">English</a>
+  </details>
+
+</div>
+
+<!-- MOBILE MENU SCRIPT -->
+<script>
+function toggleMenu(){
+  document.getElementById("menu").classList.toggle("show");
+}
+</script>
 
 </body>
 </html>
