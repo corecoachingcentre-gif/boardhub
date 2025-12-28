@@ -11,114 +11,51 @@
 <style>
 /* RESET */
 *{margin:0;padding:0;box-sizing:border-box;}
-body{
-  font-family:'Poppins',sans-serif;
-  background:#eef4ff;
-  overflow-x:hidden;
-}
+body{font-family:'Poppins',sans-serif;background:#eef4ff;overflow-x:hidden;}
 
 /* HEADER */
 header{
-  background:white;
-  padding:15px 40px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  border-bottom:3px solid #0a4fa3;
-  flex-wrap:wrap;
+  background:white;padding:15px 40px;display:flex;justify-content:space-between;
+  align-items:center;border-bottom:3px solid #0a4fa3;flex-wrap:wrap;
 }
 .brand{
-  font-size:34px;
-  font-weight:800;
-  color:#0a4fa3;
-  display:flex;
-  align-items:center;
-  gap:10px;
+  font-size:34px;font-weight:800;color:#0a4fa3;display:flex;align-items:center;gap:10px;
 }
 .brand img{width:38px;}
-header .email{
-  font-size:15px;
-  font-weight:600;
-  color:#0a4fa3;
-}
+.email{font-size:15px;font-weight:600;color:#0a4fa3;}
 
-/* NAVIGATION - SAME FOR MOBILE & LAPTOP */
-nav{
-  background:#0a4fa3;
-  padding:10px 20px;
-}
-nav ul{
-  list-style:none;
-  display:flex;
-  flex-wrap:wrap;
-  gap:25px;
-  font-weight:600;
-  color:white;
-}
-nav ul li{
-  position:relative;
-  cursor:pointer;
-  padding:8px 0;
-}
+/* NAV MENU */
+nav{background:#0a4fa3;padding:10px 20px;}
+nav ul{list-style:none;display:flex;flex-wrap:wrap;gap:18px;color:white;font-weight:600;}
+nav ul li{position:relative;cursor:pointer;padding:6px 0;}
 
-/* VERTICAL DROPDOWN ( | LINE STYLE ) */
+/* DROPDOWN (VERTICAL LINE |) */
 nav ul li ul{
-  display:none;
-  flex-direction:column;
-  background:white;
-  position:absolute;
-  top:35px;
-  left:0;
-  padding:10px 0;
-  min-width:230px;
-  border-radius:8px;
-  box-shadow:0 4px 14px rgba(0,0,0,0.18);
+  display:none;flex-direction:column;background:white;position:absolute;top:32px;left:0;
+  padding:8px 0;min-width:200px;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.18);
   animation:drop .25s ease-out;
 }
 @keyframes drop{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
 
-/* SHOW ON HOVER (PC) & TAP (MOBILE) */
-nav ul li:active > ul,
-nav ul li:hover > ul{
-  display:flex;
-}
+/* SHOW ON HOVER / TAP */
+nav ul li:hover > ul,nav ul li:active > ul{display:flex;}
 
-/* INSIDE MENU OPTIONS */
+/* INNER MENU ITEMS */
 nav ul li ul li{
-  padding:10px;
-  border-bottom:1px solid #e6e6e6;
-  color:black;
-  font-weight:500;
+  padding:8px 12px;border-bottom:1px solid #e6e6e6;font-weight:500;color:black;
 }
-nav ul li ul li:hover{
-  background:#eaf0ff;
-  color:#0a4fa3;
-  font-weight:600;
-}
+nav ul li ul li:hover{background:#eaf0ff;color:#0a4fa3;font-weight:600;}
 
 /* SUBJECT → CHAPTER DROPDOWN */
 nav ul li ul li ul{
-  display:none;
-  position:absolute;
-  left:230px;
-  top:0;
-  flex-direction:column;
+  display:none;position:absolute;left:200px;top:0;flex-direction:column;background:white;
 }
-nav ul li ul li:hover ul{
-  display:flex;
-}
+nav ul li ul li:hover ul{display:flex;}
 
-/* MOBILE SAME STYLE (NO HAMBURGER) */
+/* MOBILE SAME STYLE */
 @media(max-width:768px){
-  nav ul{
-    flex-direction:column;
-    gap:10px;
-  }
-  nav ul li ul, nav ul li ul li ul{
-    position:static;
-    width:100%;
-    box-shadow:none;
-  }
+  nav ul{flex-direction:column;gap:10px;}
+  nav ul li ul,nav ul li ul li ul{position:static;box-shadow:none;width:100%;}
 }
 </style>
 </head>
@@ -137,6 +74,7 @@ nav ul li ul li:hover ul{
   <!-- NOTES -->
   <li>Notes |
     <ul>
+      <!-- CLASS 9 -->
       <li>Class 9 |
         <ul>
           <li>Hindi (Ch 1–14)</li>
@@ -146,19 +84,39 @@ nav ul li ul li:hover ul{
           <li>Social Science (Ch 1–14)</li>
         </ul>
       </li>
+
+      <!-- CLASS 10 -->
       <li>Class 10 |
         <ul>
-          <li>Hindi (Ch 1–14)</li><li>English (Ch 1–14)</li><li>Maths (Ch 1–14)</li><li>Science (Ch 1–14)</li><li>Social Science (Ch 1–14)</li>
+          <li>Hindi (Ch 1–14)</li>
+          <li>English (Ch 1–14)</li>
+          <li>Maths (Ch 1–14)</li>
+          <li>Science (Ch 1–14)</li>
+          <li>Social Science (Ch 1–14)</li>
         </ul>
       </li>
+
+      <!-- CLASS 11 -->
       <li>Class 11 |
         <ul>
-          <li>Physics (Ch 1–14)</li><li>Chemistry (Ch 1–14)</li><li>Biology (Ch 1–14)</li><li>Maths (Ch 1–14)</li><li>English (Ch 1–14)</li>
+          <li>Physics (Ch 1–14)</li>
+          <li>Chemistry (Ch 1–14)</li>
+          <li>Biology (Ch 1–14)</li>
+          <li>Maths (Ch 1–14)</li>
+          <li>English (Ch 1–14)</li>
+          <li>Hindi (Ch 1–14)</li>
         </ul>
       </li>
+
+      <!-- CLASS 12 -->
       <li>Class 12 |
         <ul>
-          <li>Physics (Ch 1–14)</li><li>Chemistry (Ch 1–14)</li><li>Biology (Ch 1–14)</li><li>Maths (Ch 1–14)</li><li>English (Ch 1–14)</li>
+          <li>Physics (Ch 1–14)</li>
+          <li>Chemistry (Ch 1–14)</li>
+          <li>Biology (Ch 1–14)</li>
+          <li>Maths (Ch 1–14)</li>
+          <li>English (Ch 1–14)</li>
+          <li>Hindi (Ch 1–14)</li>
         </ul>
       </li>
     </ul>
@@ -167,10 +125,10 @@ nav ul li ul li:hover ul{
   <!-- SHEETS -->
   <li>Sheets |
     <ul>
-      <li>Class 9 | <ul><li>Hindi Ch 1–14</li><li>English Ch 1–14</li><li>Maths Ch 1–14</li><li>Science Ch 1–14</li></ul></li>
-      <li>Class 10 |<ul><li>Hindi Ch 1–14</li><li>English Ch 1–14</li><li>Maths Ch 1–14</li><li>Science Ch 1–14</li></ul></li>
-      <li>Class 11 |<ul><li>Physics Ch 1–14</li><li>Chemistry Ch 1–14</li><li>Biology Ch 1–14</li><li>Maths Ch 1–14</li></ul></li>
-      <li>Class 12 |<ul><li>Physics Ch 1–14</li><li>Chemistry Ch 1–14</li><li>Biology Ch 1–14</li><li>Maths Ch 1–14</li></ul></li>
+      <li>Class 9 | <ul><li>Hindi</li><li>English</li><li>Maths</li><li>Science</li><li>Social Science</li></ul></li>
+      <li>Class 10 |<ul><li>Hindi</li><li>English</li><li>Maths</li><li>Science</li><li>Social Science</li></ul></li>
+      <li>Class 11 |<ul><li>Physics</li><li>Chemistry</li><li>Biology</li><li>Maths</li><li>English</li><li>Hindi</li></ul></li>
+      <li>Class 12 |<ul><li>Physics</li><li>Chemistry</li><li>Biology</li><li>Maths</li><li>English</li><li>Hindi</li></ul></li>
     </ul>
   </li>
 
@@ -189,7 +147,7 @@ nav ul li ul li:hover ul{
 </ul>
 </nav>
 
-<section class="hero" style="text-align:center;padding:60px 20px;">
+<section style="text-align:center;padding:60px 20px;">
   <h1 style="color:#0a4fa3;font-size:40px;font-weight:800;">Welcome to BoardHub</h1>
   <p style="font-size:18px;">Notes | Sheets | Sample Papers | Class 9 to 12</p>
 </section>
