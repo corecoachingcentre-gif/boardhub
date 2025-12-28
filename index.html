@@ -9,14 +9,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-/* BASIC RESET */
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;}
 body{
-  margin:0;
   font-family:'Poppins',sans-serif;
   background:#eef4ff;
+  overflow-x:hidden;
 }
 
-/* HEADER SECTION */
+/* HEADER */
 header{
   background:white;
   padding:15px 40px;
@@ -24,6 +25,7 @@ header{
   justify-content:space-between;
   align-items:center;
   border-bottom:3px solid #0a4fa3;
+  flex-wrap:wrap;
 }
 .brand{
   font-size:34px;
@@ -33,26 +35,23 @@ header{
   align-items:center;
   gap:10px;
 }
-.brand img{
-  width:38px;
-}
+.brand img{width:38px;}
 header .email{
   font-size:15px;
   font-weight:600;
   color:#0a4fa3;
 }
 
-/* NAVBAR */
+/* NAVIGATION - SAME FOR MOBILE & LAPTOP */
 nav{
   background:#0a4fa3;
-  padding:10px 30px;
+  padding:10px 20px;
 }
 nav ul{
   list-style:none;
-  margin:0;
-  padding:0;
   display:flex;
-  gap:35px;
+  flex-wrap:wrap;
+  gap:25px;
   font-weight:600;
   color:white;
 }
@@ -62,42 +61,34 @@ nav ul li{
   padding:8px 0;
 }
 
-/* HAMBURGER BUTTON FOR MOBILE */
-.menu-btn{
-  display:none;
-  font-size:30px;
-  color:white;
-  cursor:pointer;
-}
-
-/* MAIN DROPDOWN - VERTICAL LINE "|" STYLE */
+/* VERTICAL DROPDOWN ( | LINE STYLE ) */
 nav ul li ul{
   display:none;
   flex-direction:column;
-  position:absolute;
   background:white;
-  top:40px;
+  position:absolute;
+  top:35px;
   left:0;
-  border-radius:8px;
   padding:10px 0;
   min-width:230px;
-  box-shadow:0 4px 14px rgba(0,0,0,0.15);
-  animation:drop .3s ease;
-  z-index:1000;
+  border-radius:8px;
+  box-shadow:0 4px 14px rgba(0,0,0,0.18);
+  animation:drop .25s ease-out;
 }
-@keyframes drop{
-  from{opacity:0;transform:translateY(10px);}
-  to{opacity:1;transform:translateY(0);}
-}
+@keyframes drop{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+
+/* SHOW ON HOVER (PC) & TAP (MOBILE) */
+nav ul li:active > ul,
 nav ul li:hover > ul{
   display:flex;
 }
 
+/* INSIDE MENU OPTIONS */
 nav ul li ul li{
   padding:10px;
-  border-bottom:1px solid #eee;
-  font-weight:500;
+  border-bottom:1px solid #e6e6e6;
   color:black;
+  font-weight:500;
 }
 nav ul li ul li:hover{
   background:#eaf0ff;
@@ -105,30 +96,25 @@ nav ul li ul li:hover{
   font-weight:600;
 }
 
-/* SUBJECT -> CHAPTER DROPDOWN */
+/* SUBJECT → CHAPTER DROPDOWN */
 nav ul li ul li ul{
   display:none;
-  flex-direction:column;
+  position:absolute;
   left:230px;
   top:0;
-  position:absolute;
+  flex-direction:column;
 }
 nav ul li ul li:hover ul{
   display:flex;
 }
 
-/* MOBILE FRIENDLY */
+/* MOBILE SAME STYLE (NO HAMBURGER) */
 @media(max-width:768px){
-  .menu-btn{display:block;}
   nav ul{
-    display:none;
     flex-direction:column;
-    background:#0a4fa3;
-    width:100%;
-    padding:20px 0;
+    gap:10px;
   }
-  nav.show ul{display:flex;}
-  nav ul li,nav ul li ul,nav ul li ul li ul{
+  nav ul li ul, nav ul li ul li ul{
     position:static;
     width:100%;
     box-shadow:none;
@@ -144,75 +130,69 @@ nav ul li ul li:hover ul{
 </header>
 
 <nav>
-  <span class="menu-btn" onclick="toggleMenu()">☰</span>
-  <ul>
-    
-    <li>About</li>
+<ul>
 
-    <!-- NOTES Section with Vertical Lines "|" -->
-    <li>Notes |
-      <ul>
-        <li>Class 9 |
-          <ul>
-            <li>Hindi (Ch 1–14)</li>
-            <li>English (Ch 1–14)</li>
-            <li>Maths (Ch 1–14)</li>
-            <li>Science (Ch 1–14)</li>
-            <li>Social Science (Ch 1–14)</li>
-          </ul>
-        </li>
-        <li>Class 10 |
-          <ul>
-            <li>Hindi (Ch 1–14)</li><li>English (Ch 1–14)</li><li>Maths (Ch 1–14)</li><li>Science (Ch 1–14)</li><li>Social Science (Ch 1–14)</li>
-          </ul>
-        </li>
-        <li>Class 11 |
-          <ul>
-            <li>Physics (Ch 1–14)</li><li>Chemistry (Ch 1–14)</li><li>Biology (Ch 1–14)</li><li>Maths (Ch 1–14)</li><li>English (Ch 1–14)</li>
-          </ul>
-        </li>
-        <li>Class 12 |
-          <ul>
-            <li>Physics (Ch 1–14)</li><li>Chemistry (Ch 1–14)</li><li>Biology (Ch 1–14)</li><li>Maths (Ch 1–14)</li><li>English (Ch 1–14)</li>
-          </ul>
-        </li>
-      </ul>
-    </li>
+  <li>About</li>
 
-    <!-- SHEETS Section with Vertical Lines "|" -->
-    <li>Sheets |
-      <ul>
-        <li>Class 9 | <ul><li>Hindi Ch 1–14</li><li>English Ch 1–14</li><li>Maths Ch 1–14</li><li>Science Ch 1–14</li></ul></li>
-        <li>Class 10 |<ul><li>Hindi Ch 1–14</li><li>English Ch 1–14</li><li>Maths Ch 1–14</li><li>Science Ch 1–14</li></ul></li>
-        <li>Class 11 |<ul><li>Physics Ch 1–14</li><li>Chemistry Ch 1–14</li><li>Biology Ch 1–14</li><li>Maths Ch 1–14</li></ul></li>
-        <li>Class 12 |<ul><li>Physics Ch 1–14</li><li>Chemistry Ch 1–14</li><li>Biology Ch 1–14</li><li>Maths Ch 1–14</li></ul></li>
-      </ul>
-    </li>
+  <!-- NOTES -->
+  <li>Notes |
+    <ul>
+      <li>Class 9 |
+        <ul>
+          <li>Hindi (Ch 1–14)</li>
+          <li>English (Ch 1–14)</li>
+          <li>Maths (Ch 1–14)</li>
+          <li>Science (Ch 1–14)</li>
+          <li>Social Science (Ch 1–14)</li>
+        </ul>
+      </li>
+      <li>Class 10 |
+        <ul>
+          <li>Hindi (Ch 1–14)</li><li>English (Ch 1–14)</li><li>Maths (Ch 1–14)</li><li>Science (Ch 1–14)</li><li>Social Science (Ch 1–14)</li>
+        </ul>
+      </li>
+      <li>Class 11 |
+        <ul>
+          <li>Physics (Ch 1–14)</li><li>Chemistry (Ch 1–14)</li><li>Biology (Ch 1–14)</li><li>Maths (Ch 1–14)</li><li>English (Ch 1–14)</li>
+        </ul>
+      </li>
+      <li>Class 12 |
+        <ul>
+          <li>Physics (Ch 1–14)</li><li>Chemistry (Ch 1–14)</li><li>Biology (Ch 1–14)</li><li>Maths (Ch 1–14)</li><li>English (Ch 1–14)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 
-    <!-- SAMPLE PAPERS -->
-    <li>Sample Papers |
-      <ul>
-        <li>MP Board Class 10</li>
-        <li>MP Board Class 12</li>
-        <li>CBSE Class 10</li>
-        <li>CBSE Class 12</li>
-      </ul>
-    </li>
+  <!-- SHEETS -->
+  <li>Sheets |
+    <ul>
+      <li>Class 9 | <ul><li>Hindi Ch 1–14</li><li>English Ch 1–14</li><li>Maths Ch 1–14</li><li>Science Ch 1–14</li></ul></li>
+      <li>Class 10 |<ul><li>Hindi Ch 1–14</li><li>English Ch 1–14</li><li>Maths Ch 1–14</li><li>Science Ch 1–14</li></ul></li>
+      <li>Class 11 |<ul><li>Physics Ch 1–14</li><li>Chemistry Ch 1–14</li><li>Biology Ch 1–14</li><li>Maths Ch 1–14</li></ul></li>
+      <li>Class 12 |<ul><li>Physics Ch 1–14</li><li>Chemistry Ch 1–14</li><li>Biology Ch 1–14</li><li>Maths Ch 1–14</li></ul></li>
+    </ul>
+  </li>
 
-    <li>Updates</li>
-  </ul>
+  <!-- SAMPLE PAPERS -->
+  <li>Sample Papers |
+    <ul>
+      <li>MP Board Class 10</li>
+      <li>MP Board Class 12</li>
+      <li>CBSE Class 10</li>
+      <li>CBSE Class 12</li>
+    </ul>
+  </li>
+
+  <li>Updates</li>
+
+</ul>
 </nav>
 
 <section class="hero" style="text-align:center;padding:60px 20px;">
   <h1 style="color:#0a4fa3;font-size:40px;font-weight:800;">Welcome to BoardHub</h1>
-  <p style="font-size:18px;">Notes | Sheets | Sample Papers for Class 9 to 12</p>
+  <p style="font-size:18px;">Notes | Sheets | Sample Papers | Class 9 to 12</p>
 </section>
-
-<script>
-function toggleMenu(){
-  document.querySelector("nav").classList.toggle("show");
-}
-</script>
 
 </body>
 </html>
