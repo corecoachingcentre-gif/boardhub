@@ -51,6 +51,7 @@ body{
     background:#0a4db3;
     padding:14px 30px;
     position:relative;
+    z-index:999;
 }
 .navbar ul{
     list-style:none;
@@ -69,7 +70,7 @@ body{
     position:relative;
 }
 
-/* MAIN DROPDOWN */
+/* DROPDOWN BASE */
 .dropdown{
     display:none;
     position:absolute;
@@ -79,36 +80,50 @@ body{
     border-radius:8px;
     box-shadow:0 8px 18px rgba(0,0,0,0.18);
     min-width:230px;
-    z-index:10;
 }
-.navbar li:hover .dropdown{display:flex;gap:20px;}
+.navbar li:hover .dropdown{display:flex;gap:25px;}
 
-/* COLUMN STYLING */
-.dropdown-column{
+/* CLASS PANEL */
+.sub-menu{
     border-right:2px solid #d6daf7;
-    padding-right:10px;
+    padding-right:15px;
+    position:relative;
 }
-.dropdown-column:last-child{
-    border-right:none;
-}
-.dropdown h4{
+.sub-menu:last-child{border-right:none;}
+.sub-menu h4{
     font-size:14px;
-    margin-bottom:10px;
-    color:#0a4db3;
     font-weight:600;
+    color:#0a4db3;
+    cursor:pointer;
+    padding:5px 0;
 }
-.dropdown a{
+.sub-menu:hover h4{text-decoration:underline;}
+
+/* SUBJECT PANEL */
+.inner-menu{
+    display:none;
+    background:white;
+    position:absolute;
+    left:160px;
+    top:0;
+    padding:15px;
+    border-radius:8px;
+    box-shadow:0 8px 18px rgba(0,0,0,0.18);
+    min-width:160px;
+}
+.sub-menu:hover .inner-menu{display:block;}
+.inner-menu a{
     display:block;
-    font-size:14px;
     padding:6px 0;
     color:#0a4db3;
+    font-size:14px;
 }
-.dropdown a:hover{
+.inner-menu a:hover{
     background:#eaf0ff;
     border-radius:4px;
 }
 
-/* HERO SECTION */
+/* HERO */
 .hero{
     display:flex;
     justify-content:space-between;
@@ -136,7 +151,7 @@ body{
     font-weight:600;
 }
 
-/* LATEST UPDATE BOX */
+/* LATEST UPDATES */
 .update-box{
     background:white;
     width:270px;
@@ -155,14 +170,19 @@ body{
     color:#0a3a7a;
 }
 
-/* MOBILE RESPONSIVE */
+/* RESPONSIVE */
 @media(max-width:768px){
     .navbar ul{flex-direction:column;gap:15px;}
     .dropdown{position:static;display:none;box-shadow:none;}
     .navbar li:hover .dropdown{display:block;}
-    .hero{flex-direction:column;align-items:center;text-align:center;}
+    .inner-menu{
+        position:static;
+        box-shadow:none;
+        padding-left:10px;
+    }
+    .hero{flex-direction:column;text-align:center;}
     .hero-text p{width:100%;}
-    .update-box{margin-top:30px;}
+    .update-box{margin-top:25px;}
 }
 </style>
 </head>
@@ -179,40 +199,61 @@ body{
     <div class="logo">📘 BoardHub</div>
 </div>
 
-<!-- NAVIGATION BAR WITH DROPDOWN -->
+<!-- NAVIGATION BAR -->
 <div class="navbar">
     <ul>
-
         <li><a>About Us</a></li>
 
-        <!-- NOTES DROPDOWN -->
+        <!-- NOTES -->
         <li><a>Notes ▼</a>
             <div class="dropdown">
-                <div class="dropdown-column">
-                    <h4>Class 9</h4>
-                    <a>Hindi</a><a>English</a><a>Maths</a><a>Science</a><a>Social Science</a>
-                    <h4>Class 10</h4>
-                    <a>Hindi</a><a>English</a><a>Maths</a><a>Science</a><a>Social Science</a>
+                
+                <!-- Class 9 -->
+                <div class="sub-menu">
+                    <h4>Class 9 ▶</h4>
+                    <div class="inner-menu">
+                      <a>Hindi</a><a>English</a><a>Maths</a><a>Science</a><a>Social Science</a>
+                    </div>
                 </div>
-                <div class="dropdown-column">
-                    <h4>Class 11</h4>
-                    <a>Hindi</a><a>English</a><a>Maths</a><a>Physics</a><a>Chemistry</a><a>Biology</a>
-                    <h4>Class 12</h4>
-                    <a>Hindi</a><a>English</a><a>Maths</a><a>Physics</a><a>Chemistry</a><a>Biology</a>
+
+                <!-- Class 10 -->
+                <div class="sub-menu">
+                    <h4>Class 10 ▶</h4>
+                    <div class="inner-menu">
+                      <a>Hindi</a><a>English</a><a>Maths</a><a>Science</a><a>Social Science</a>
+                    </div>
+                </div>
+
+                <!-- Class 11 -->
+                <div class="sub-menu">
+                    <h4>Class 11 ▶</h4>
+                    <div class="inner-menu">
+                      <a>Hindi</a><a>English</a><a>Maths</a><a>Physics</a><a>Chemistry</a><a>Biology</a>
+                    </div>
+                </div>
+
+                <!-- Class 12 -->
+                <div class="sub-menu">
+                    <h4>Class 12 ▶</h4>
+                    <div class="inner-menu">
+                      <a>Hindi</a><a>English</a><a>Maths</a><a>Physics</a><a>Chemistry</a><a>Biology</a>
+                    </div>
                 </div>
             </div>
         </li>
 
-        <!-- SHEETS MENU -->
+        <!-- SHEETS -->
         <li><a>Sheets ▼</a>
             <div class="dropdown">
-                <div class="dropdown-column">
-                    <h4>Class 9 - 10</h4>
-                    <a>Hindi</a><a>English</a><a>Maths</a><a>Science</a><a>Social Science</a>
+                <div class="sub-menu"><h4>Class 9-10 ▶</h4>
+                    <div class="inner-menu">
+                       <a>Hindi</a><a>English</a><a>Maths</a><a>Science</a><a>Social Science</a>
+                    </div>
                 </div>
-                <div class="dropdown-column">
-                    <h4>Class 11 - 12</h4>
-                    <a>Hindi</a><a>English</a><a>Maths</a><a>Physics</a><a>Chemistry</a><a>Biology</a>
+                <div class="sub-menu"><h4>Class 11-12 ▶</h4>
+                    <div class="inner-menu">
+                       <a>Hindi</a><a>English</a><a>Maths</a><a>Physics</a><a>Chemistry</a><a>Biology</a>
+                    </div>
                 </div>
             </div>
         </li>
@@ -220,25 +261,24 @@ body{
         <!-- SAMPLE PAPER -->
         <li><a>Sample Paper ▼</a>
             <div class="dropdown">
-                <div class="dropdown-column">
-                    <h4>MP Board</h4>
-                    <a>Class 10</a>
-                    <a>Class 12</a>
+                <div class="sub-menu"><h4>MP Board ▶</h4>
+                    <div class="inner-menu">
+                        <a>Class 10</a><a>Class 12</a>
+                    </div>
                 </div>
-                <div class="dropdown-column">
-                    <h4>CBSE Board</h4>
-                    <a>Class 10</a>
-                    <a>Class 12</a>
+                <div class="sub-menu"><h4>CBSE Board ▶</h4>
+                    <div class="inner-menu">
+                        <a>Class 10</a><a>Class 12</a>
+                    </div>
                 </div>
             </div>
         </li>
 
         <li><a>Updates</a></li>
-
     </ul>
 </div>
 
-<!-- HERO SECTION -->
+<!-- HERO -->
 <div class="hero">
     <div class="hero-text">
         <h1>Welcome to <br>BoardHub</h1>
