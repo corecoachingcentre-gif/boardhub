@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BoardHub</title>
 
-<!-- GOOGLE FONTS -->
+<!-- GOOGLE FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
@@ -16,7 +16,7 @@ body{
   background:#eef4ff;
 }
 
-/* HEADER DESIGN */
+/* HEADER SECTION */
 header{
   background:white;
   padding:15px 40px;
@@ -25,64 +25,82 @@ header{
   align-items:center;
   border-bottom:3px solid #0a4fa3;
 }
-.brand-font{
+.brand{
   font-size:34px;
   font-weight:800;
   color:#0a4fa3;
   display:flex;
   align-items:center;
   gap:10px;
-  letter-spacing:1px;
 }
-.brand-font img{
-  width:40px;
-  vertical-align:middle;
+.brand img{
+  width:38px;
+}
+header .email{
+  font-size:15px;
+  font-weight:600;
+  color:#0a4fa3;
 }
 
-/* NAV BAR BASE */
+/* NAVBAR */
 nav{
   background:#0a4fa3;
-  padding:12px 40px;
+  padding:10px 30px;
 }
 nav ul{
   list-style:none;
   margin:0;
   padding:0;
   display:flex;
-  gap:40px;
-  color:white;
+  gap:35px;
   font-weight:600;
+  color:white;
 }
 nav ul li{
   position:relative;
   cursor:pointer;
+  padding:8px 0;
 }
 
-/* ▼ MAIN DROPDOWN (VERTICAL) */
+/* HAMBURGER BUTTON FOR MOBILE */
+.menu-btn{
+  display:none;
+  font-size:30px;
+  color:white;
+  cursor:pointer;
+}
+
+/* MAIN DROPDOWN - VERTICAL LINE "|" STYLE */
 nav ul li ul{
   display:none;
   flex-direction:column;
   position:absolute;
   background:white;
-  color:black;
-  top:35px;
+  top:40px;
   left:0;
-  padding:10px 0;
   border-radius:8px;
+  padding:10px 0;
+  min-width:230px;
   box-shadow:0 4px 14px rgba(0,0,0,0.15);
-  min-width:200px;
+  animation:drop .3s ease;
   z-index:1000;
+}
+@keyframes drop{
+  from{opacity:0;transform:translateY(10px);}
+  to{opacity:1;transform:translateY(0);}
 }
 nav ul li:hover > ul{
   display:flex;
 }
+
 nav ul li ul li{
   padding:10px;
-  border-bottom:1px solid #e6e6e6;
+  border-bottom:1px solid #eee;
   font-weight:500;
+  color:black;
 }
 nav ul li ul li:hover{
-  background:#e8f0ff;
+  background:#eaf0ff;
   color:#0a4fa3;
   font-weight:600;
 }
@@ -90,47 +108,30 @@ nav ul li ul li:hover{
 /* SUBJECT -> CHAPTER DROPDOWN */
 nav ul li ul li ul{
   display:none;
-  left:200px;
+  flex-direction:column;
+  left:230px;
   top:0;
+  position:absolute;
 }
 nav ul li ul li:hover ul{
   display:flex;
 }
 
-/* HERO SECTION */
-.hero{
-  text-align:center;
-  padding:60px 20px;
-}
-.hero h1{
-  font-size:40px;
-  font-weight:800;
-  color:#0a4fa3;
-}
-.hero button{
-  padding:12px 25px;
-  background:#ff8500;
-  border:none;
-  border-radius:6px;
-  color:white;
-  font-weight:600;
-  cursor:pointer;
-  font-size:16px;
-}
-.hero button:hover{
-  background:#d67300;
-}
-
-/* MOBILE RESPONSIVE */
+/* MOBILE FRIENDLY */
 @media(max-width:768px){
+  .menu-btn{display:block;}
   nav ul{
+    display:none;
     flex-direction:column;
-    gap:15px;
-  }
-  nav ul li ul, nav ul li ul li ul{
-    position:static;
-    box-shadow:none;
+    background:#0a4fa3;
     width:100%;
+    padding:20px 0;
+  }
+  nav.show ul{display:flex;}
+  nav ul li,nav ul li ul,nav ul li ul li ul{
+    position:static;
+    width:100%;
+    box-shadow:none;
   }
 }
 </style>
@@ -138,92 +139,80 @@ nav ul li ul li:hover ul{
 <body>
 
 <header>
-  <h2 class="brand-font">
-    BoardHub 
-    <img src="https://cdn-icons-png.flaticon.com/512/2232/2232688.png" alt="book-logo">
-  </h2>
-  <p>📩 contact@boardhub.com</p>
+  <h2 class="brand">BoardHub <img src="https://cdn-icons-png.flaticon.com/512/2232/2232688.png"></h2>
+  <p class="email">📩 corecoachingcentre@gmail.com</p>
 </header>
 
 <nav>
-<ul>
-  <li>About Us</li>
+  <span class="menu-btn" onclick="toggleMenu()">☰</span>
+  <ul>
+    
+    <li>About</li>
 
-  <!-- NOTES -->
-  <li>Notes ▼
-    <ul>
-      <li>Class 9 ▼
-        <ul>
-          <li>Hindi (Ch 1–14)</li>
-          <li>English (Ch 1–14)</li>
-          <li>Maths (Ch 1–14)</li>
-          <li>Science (Ch 1–14)</li>
-          <li>Social Science (Ch 1–14)</li>
-        </ul>
-      </li>
-      <li>Class 10 ▼
-        <ul>
-          <li>Hindi (Ch 1–14)</li><li>English (Ch 1–14)</li><li>Maths (Ch 1–14)</li><li>Science (Ch 1–14)</li><li>Social Science (Ch 1–14)</li>
-        </ul>
-      </li>
-      <li>Class 11 ▼
-        <ul>
-          <li>Physics (Ch 1–14)</li><li>Chemistry (Ch 1–14)</li><li>Biology (Ch 1–14)</li><li>Maths (Ch 1–14)</li><li>English (Ch 1–14)</li>
-        </ul>
-      </li>
-      <li>Class 12 ▼
-        <ul>
-          <li>Physics (Ch 1–14)</li><li>Chemistry (Ch 1–14)</li><li>Biology (Ch 1–14)</li><li>Maths (Ch 1–14)</li><li>English (Ch 1–14)</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
+    <!-- NOTES Section with Vertical Lines "|" -->
+    <li>Notes |
+      <ul>
+        <li>Class 9 |
+          <ul>
+            <li>Hindi (Ch 1–14)</li>
+            <li>English (Ch 1–14)</li>
+            <li>Maths (Ch 1–14)</li>
+            <li>Science (Ch 1–14)</li>
+            <li>Social Science (Ch 1–14)</li>
+          </ul>
+        </li>
+        <li>Class 10 |
+          <ul>
+            <li>Hindi (Ch 1–14)</li><li>English (Ch 1–14)</li><li>Maths (Ch 1–14)</li><li>Science (Ch 1–14)</li><li>Social Science (Ch 1–14)</li>
+          </ul>
+        </li>
+        <li>Class 11 |
+          <ul>
+            <li>Physics (Ch 1–14)</li><li>Chemistry (Ch 1–14)</li><li>Biology (Ch 1–14)</li><li>Maths (Ch 1–14)</li><li>English (Ch 1–14)</li>
+          </ul>
+        </li>
+        <li>Class 12 |
+          <ul>
+            <li>Physics (Ch 1–14)</li><li>Chemistry (Ch 1–14)</li><li>Biology (Ch 1–14)</li><li>Maths (Ch 1–14)</li><li>English (Ch 1–14)</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
 
-  <!-- SHEETS -->
-  <li>Sheets ▼
-    <ul>
-      <li>Class 9 Sheets ▼
-        <ul>
-          <li>Hindi Ch 1–14</li><li>English Ch 1–14</li><li>Maths Ch 1–14</li><li>Science Ch 1–14</li>
-        </ul>
-      </li>
-      <li>Class 10 Sheets ▼
-        <ul>
-          <li>Hindi Ch 1–14</li><li>English Ch 1–14</li><li>Maths Ch 1–14</li><li>Science Ch 1–14</li>
-        </ul>
-      </li>
-      <li>Class 11 Sheets ▼
-        <ul>
-          <li>Physics Ch 1–14</li><li>Chemistry Ch 1–14</li><li>Biology Ch 1–14</li><li>Maths Ch 1–14</li>
-        </ul>
-      </li>
-      <li>Class 12 Sheets ▼
-        <ul>
-          <li>Physics Ch 1–14</li><li>Chemistry Ch 1–14</li><li>Biology Ch 1–14</li><li>Maths Ch 1–14</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
+    <!-- SHEETS Section with Vertical Lines "|" -->
+    <li>Sheets |
+      <ul>
+        <li>Class 9 | <ul><li>Hindi Ch 1–14</li><li>English Ch 1–14</li><li>Maths Ch 1–14</li><li>Science Ch 1–14</li></ul></li>
+        <li>Class 10 |<ul><li>Hindi Ch 1–14</li><li>English Ch 1–14</li><li>Maths Ch 1–14</li><li>Science Ch 1–14</li></ul></li>
+        <li>Class 11 |<ul><li>Physics Ch 1–14</li><li>Chemistry Ch 1–14</li><li>Biology Ch 1–14</li><li>Maths Ch 1–14</li></ul></li>
+        <li>Class 12 |<ul><li>Physics Ch 1–14</li><li>Chemistry Ch 1–14</li><li>Biology Ch 1–14</li><li>Maths Ch 1–14</li></ul></li>
+      </ul>
+    </li>
 
-  <!-- SAMPLE PAPER -->
-  <li>Sample Paper ▼
-    <ul>
-      <li>MP Board Class 10</li>
-      <li>MP Board Class 12</li>
-      <li>CBSE Class 10</li>
-      <li>CBSE Class 12</li>
-    </ul>
-  </li>
+    <!-- SAMPLE PAPERS -->
+    <li>Sample Papers |
+      <ul>
+        <li>MP Board Class 10</li>
+        <li>MP Board Class 12</li>
+        <li>CBSE Class 10</li>
+        <li>CBSE Class 12</li>
+      </ul>
+    </li>
 
-  <li>Updates</li>
-</ul>
+    <li>Updates</li>
+  </ul>
 </nav>
 
-<section class="hero">
-  <h1>Welcome to BoardHub</h1>
-  <p>Find Notes, Sheets & Sample Papers for Class 9 to 12</p>
-  <button>Get Started</button>
+<section class="hero" style="text-align:center;padding:60px 20px;">
+  <h1 style="color:#0a4fa3;font-size:40px;font-weight:800;">Welcome to BoardHub</h1>
+  <p style="font-size:18px;">Notes | Sheets | Sample Papers for Class 9 to 12</p>
 </section>
+
+<script>
+function toggleMenu(){
+  document.querySelector("nav").classList.toggle("show");
+}
+</script>
 
 </body>
 </html>
