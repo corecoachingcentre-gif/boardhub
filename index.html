@@ -10,78 +10,71 @@
 <style>
 /* GLOBAL RESET */
 *{margin:0;padding:0;box-sizing:border-box;}
-body{
-    font-family:'Poppins',sans-serif;
-    background:#f4f7fc;
-    color:#0a2d5f;
-}
+body{font-family:'Poppins',sans-serif;background:#f4f7fc;color:#0a2d5f;}
 
-/* TOP BAR */
+/* TOP HEADER */
 .topbar{
-    background:white;padding:10px 30px;display:flex;justify-content:space-between;align-items:center;
-    font-size:14px;color:#1a3b7e;border-bottom:1px solid #e2e6f7;
+    background:white;padding:10px 30px;display:flex;justify-content:space-between;
+    align-items:center;border-bottom:1px solid #e2e6f7;color:#1a3b7e;font-size:14px;
 }
-
-/* HEADER LOGO */
 .header{background:white;padding:20px 30px;display:flex;justify-content:space-between;align-items:center;}
-.logo{font-size:35px;font-weight:700;color:#0b3c8c;display:flex;align-items:center;gap:8px;}
+.logo{font-size:35px;font-weight:700;color:#0b3c8c;}
 
 /* NAVBAR */
-.navbar{background:#0a4db3;padding:12px 30px;position:relative;}
-.navbar ul{list-style:none;display:flex;gap:35px;}
-.navbar a{
-    color:white;text-decoration:none;font-weight:500;font-size:16px;position:relative;cursor:pointer;
+.navbar{
+    background:#0a4db3;padding:12px 30px;display:flex;gap:30px;align-items:center;flex-wrap:wrap;
+}
+.navbar ul{list-style:none;display:flex;gap:35px;flex-wrap:wrap;}
+.navbar a{color:white;text-decoration:none;font-size:16px;font-weight:500;cursor:pointer;}
+
+/* MAIN DROPDOWN WRAPPER */
+.dropdown{
+    position:absolute;background:white;min-width:200px;border-radius:6px;
+    box-shadow:0 8px 18px rgba(0,0,0,0.18);
+    opacity:0;visibility:hidden;transform:translateY(10px);transition:0.3s;
 }
 .navbar li{position:relative;}
-
-/* DROPDOWN BASE - now vertical */
-.dropdown{
-    position:absolute;top:45px;left:0;background:white;padding:15px 0;
-    min-width:190px;border-radius:6px;box-shadow:0 8px 18px rgba(0,0,0,0.18);
-    display:flex;flex-direction:column;opacity:0;visibility:hidden;
-    transform:translateY(10px);transition:all .25s ease;
-}
-
-/* SHOW ON HOVER (smooth open) */
 .navbar li:hover .dropdown{
     opacity:1;visibility:visible;transform:translateY(0);
 }
 
-/* DROPDOWN ITEMS */
-.dropdown h4{
-    font-size:15px;font-weight:600;color:#0a4db3;padding:10px 20px 5px;border-bottom:1px solid #dce3ff;
+/* CLASS BLOCKS */
+.class-block{
+    padding:10px;border-bottom:1px solid #e4e6ff;
 }
-.dropdown a{
-    display:block;padding:8px 20px;font-size:14px;color:#0a4db3;
-}
-.dropdown a:hover{background:#eaf0ff;}
-
-/* VERTICAL LINE STYLE ( | ) */
-.separator{
-    border-left:2px solid #d6daf7;
-    height:100%;
-    margin:0 10px;
+.class-block:last-child{border-bottom:none;}
+.class-block h4{
+    font-size:15px;font-weight:600;color:#0a4db3;margin-bottom:8px;
 }
 
-/* HERO SECTION */
-.hero{display:flex;justify-content:space-between;padding:50px 30px;background:white;flex-wrap:wrap;}
-.hero-text h1{font-size:42px;font-weight:700;color:#0b3c8c;}
-.hero-text p{margin:12px 0 25px;font-size:16px;color:#1d315c;width:350px;}
-.button{background:#ff8b34;color:white;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:600;}
+/* SUBJECTS LIST */
+.subjects{
+    display:flex;flex-direction:column;padding-left:10px;
+}
+.subjects a{
+    padding:6px 0;font-size:14px;color:#0a4db3;text-decoration:none;
+}
+.subjects a:hover{background:#eef3ff;border-radius:4px;padding-left:8px;}
 
-/* UPDATE BOX */
+/* HERO */
+.hero{
+    display:flex;justify-content:space-between;gap:40px;padding:50px 30px;background:white;flex-wrap:wrap;
+}
+.hero-text h1{font-size:42px;color:#0b3c8c;font-weight:700;}
+.hero-text p{margin:10px 0 25px;width:350px;color:#1d315c;}
+.button{background:#ff8b34;color:white;padding:12px 22px;border-radius:8px;font-weight:600;text-decoration:none;}
+
+/* UPDATES BOX */
 .update-box{
-    background:white;width:270px;padding:20px;border-radius:12px;
-    box-shadow:0 5px 18px rgba(0,0,0,0.1);margin-top:10px;
+    background:white;padding:20px;width:270px;border-radius:12px;
+    box-shadow:0 5px 18px rgba(0,0,0,0.15);
 }
-.update-box h3{font-size:19px;margin-bottom:10px;color:#0b3c8c;}
-.update-box li{margin:10px 0;color:#0a3a7a;}
 
-/* RESPONSIVE */
+/* MOBILE FRIENDLY (CLICK TO OPEN) */
 @media(max-width:768px){
-    .navbar ul{flex-direction:column;gap:15px;}
-    .dropdown{position:relative;box-shadow:none;}
-    .hero{flex-direction:column;text-align:center;}
+    .navbar ul{flex-direction:column;}
+    .navbar li:hover .dropdown{position:relative;}
+    .dropdown{width:100%;box-shadow:none;}
 }
 </style>
 </head>
@@ -90,7 +83,7 @@ body{
 <!-- TOP BAR -->
 <div class="topbar">
     <span>📧 corecoachingcentre@gmail.com</span>
-    <span>About | Class</span>
+    <span>Class | About</span>
 </div>
 
 <!-- LOGO -->
@@ -106,42 +99,72 @@ body{
         <!-- NOTES MENU -->
         <li><a>Notes ▼</a>
             <div class="dropdown">
-                <h4>Class 9</h4>
-                <a>Hindi</a><a>English</a><a>Maths</a><a>Science</a><a>Social Science</a>
-                <div class="separator"></div>
-                <h4>Class 10</h4>
-                <a>Hindi</a><a>English</a><a>Maths</a><a>Science</a><a>Social Science</a>
-                <div class="separator"></div>
-                <h4>Class 11</h4>
-                <a>Hindi</a><a>English</a><a>Maths</a><a>Physics</a><a>Chemistry</a><a>Biology</a>
-                <div class="separator"></div>
-                <h4>Class 12</h4>
-                <a>Hindi</a><a>English</a><a>Maths</a><a>Physics</a><a>Chemistry</a><a>Biology</a>
+
+                <div class="class-block">
+                    <h4>Class 9</h4>
+                    <div class="subjects">
+                        <a>Hindi</a><a>English</a><a>Maths</a><a>Science</a><a>Social Science</a>
+                    </div>
+                </div>
+
+                <div class="class-block">
+                    <h4>Class 10</h4>
+                    <div class="subjects">
+                        <a>Hindi</a><a>English</a><a>Maths</a><a>Science</a><a>Social Science</a>
+                    </div>
+                </div>
+
+                <div class="class-block">
+                    <h4>Class 11</h4>
+                    <div class="subjects">
+                        <a>Hindi</a><a>English</a><a>Maths</a><a>Physics</a><a>Chemistry</a><a>Biology</a>
+                    </div>
+                </div>
+
+                <div class="class-block">
+                    <h4>Class 12</h4>
+                    <div class="subjects">
+                        <a>Hindi</a><a>English</a><a>Maths</a><a>Physics</a><a>Chemistry</a><a>Biology</a>
+                    </div>
+                </div>
             </div>
         </li>
 
         <!-- SHEETS MENU -->
         <li><a>Sheets ▼</a>
             <div class="dropdown">
-                <h4>Class 9 - 10</h4>
-                <a>Hindi</a><a>English</a><a>Maths</a><a>Science</a><a>Social Science</a>
-                <div class="separator"></div>
-                <h4>Class 11 - 12</h4>
-                <a>Hindi</a><a>English</a><a>Maths</a><a>Physics</a><a>Chemistry</a><a>Biology</a>
+
+                <div class="class-block">
+                    <h4>Class 9</h4>
+                    <div class="subjects">
+                        <a>Hindi</a><a>English</a><a>Maths</a><a>Science</a><a>Social Science</a>
+                    </div>
+                </div>
+
+                <div class="class-block">
+                    <h4>Class 10</h4>
+                    <div class="subjects">
+                        <a>Hindi</a><a>English</a><a>Maths</a><a>Science</a><a>Social Science</a>
+                    </div>
+                </div>
+
+                <div class="class-block">
+                    <h4>Class 11</h4>
+                    <div class="subjects">
+                        <a>Hindi</a><a>English</a><a>Maths</a><a>Physics</a><a>Chemistry</a><a>Biology</a>
+                    </div>
+                </div>
+
+                <div class="class-block">
+                    <h4>Class 12</h4>
+                    <div class="subjects">
+                        <a>Hindi</a><a>English</a><a>Maths</a><a>Physics</a><a>Chemistry</a><a>Biology</a>
+                    </div>
+                </div>
             </div>
         </li>
 
-        <!-- SAMPLE PAPER -->
-        <li><a>Sample Paper ▼</a>
-            <div class="dropdown">
-                <h4>MP Board</h4>
-                <a>Class 10</a><a>Class 12</a>
-                <div class="separator"></div>
-                <h4>CBSE Board</h4>
-                <a>Class 10</a><a>Class 12</a>
-            </div>
-        </li>
-
+        <li><a>Sample Papers</a></li>
         <li><a>Updates</a></li>
     </ul>
 </div>
@@ -153,7 +176,7 @@ body{
         <p>Find class notes, sheets, and sample papers for Class 9th to 12th in one place.</p>
         <a href="#" class="button">Get Started</a>
     </div>
-
+    
     <div class="update-box">
         <h3>Latest Updates</h3>
         <ul>
