@@ -6,28 +6,40 @@
 <title>BoardHub</title>
 
 <!-- GOOGLE FONTS -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+/* BASIC RESET */
 body{
   margin:0;
   font-family:'Poppins',sans-serif;
   background:#eef4ff;
 }
+
+/* HEADER DESIGN */
 header{
   background:white;
-  padding:10px 40px;
+  padding:15px 40px;
   display:flex;
   justify-content:space-between;
   align-items:center;
   border-bottom:3px solid #0a4fa3;
 }
 .brand-font{
-  font-family:'Montserrat',sans-serif;
-  font-size:32px;
+  font-size:34px;
+  font-weight:800;
   color:#0a4fa3;
-  font-weight:700;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  letter-spacing:1px;
 }
+.brand-font img{
+  width:40px;
+  vertical-align:middle;
+}
+
+/* NAV BAR BASE */
 nav{
   background:#0a4fa3;
   padding:12px 40px;
@@ -44,61 +56,69 @@ nav ul{
 nav ul li{
   position:relative;
   cursor:pointer;
-  padding:5px 0;
 }
-nav ul li:hover > ul{
-  display:flex;
-}
-nav ul ul{
+
+/* ▼ MAIN DROPDOWN (VERTICAL) */
+nav ul li ul{
   display:none;
+  flex-direction:column;
   position:absolute;
   background:white;
   color:black;
   top:35px;
   left:0;
-  padding:20px;
-  border-radius:10px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.15);
-  gap:30px;
+  padding:10px 0;
+  border-radius:8px;
+  box-shadow:0 4px 14px rgba(0,0,0,0.15);
+  min-width:200px;
   z-index:1000;
 }
-.column{
-  min-width:160px;
-  font-weight:700;
-  color:#0a4fa3;
+nav ul li:hover > ul{
+  display:flex;
 }
-.column ul{
-  list-style:none;
-  padding:8px 0 0;
-}
-.column ul li{
-  padding:5px 0;
-  cursor:pointer;
-  color:black;
+nav ul li ul li{
+  padding:10px;
+  border-bottom:1px solid #e6e6e6;
   font-weight:500;
 }
-.column ul li:hover{
+nav ul li ul li:hover{
+  background:#e8f0ff;
   color:#0a4fa3;
   font-weight:600;
 }
 
-/* Subject → Chapters */
-.subject:hover .chapters{
-  display:block;
-}
-.chapters{
+/* SUBJECT -> CHAPTER DROPDOWN */
+nav ul li ul li ul{
   display:none;
-  position:absolute;
-  background:white;
-  padding:10px;
-  left:160px;
+  left:200px;
   top:0;
-  border-radius:6px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
-.chapters li{
-  padding:4px;
-  white-space:nowrap;
+nav ul li ul li:hover ul{
+  display:flex;
+}
+
+/* HERO SECTION */
+.hero{
+  text-align:center;
+  padding:60px 20px;
+}
+.hero h1{
+  font-size:40px;
+  font-weight:800;
+  color:#0a4fa3;
+}
+.hero button{
+  padding:12px 25px;
+  background:#ff8500;
+  border:none;
+  border-radius:6px;
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+  font-size:16px;
+}
+.hero button:hover{
+  background:#d67300;
 }
 
 /* MOBILE RESPONSIVE */
@@ -107,14 +127,10 @@ nav ul ul{
     flex-direction:column;
     gap:15px;
   }
-  nav ul ul{
-    position:static;
-    flex-direction:column;
-    box-shadow:none;
-  }
-  .chapters{
+  nav ul li ul, nav ul li ul li ul{
     position:static;
     box-shadow:none;
+    width:100%;
   }
 }
 </style>
@@ -122,8 +138,11 @@ nav ul ul{
 <body>
 
 <header>
-  <h2 class="brand-font">📘 BoardHub</h2>
-  <p>contact@boardhub.com</p>
+  <h2 class="brand-font">
+    BoardHub 
+    <img src="https://cdn-icons-png.flaticon.com/512/2232/2232688.png" alt="book-logo">
+  </h2>
+  <p>📩 contact@boardhub.com</p>
 </header>
 
 <nav>
@@ -133,61 +152,60 @@ nav ul ul{
   <!-- NOTES -->
   <li>Notes ▼
     <ul>
-      
-      <li class="column">Class 9
+      <li>Class 9 ▼
         <ul>
-          <li class="subject">Hindi ▶<ul class="chapters"><li>Ch 1–14</li></ul></li>
-          <li class="subject">English ▶<ul class="chapters"><li>Ch 1–14</li></ul></li>
-          <li class="subject">Maths ▶<ul class="chapters"><li>Ch 1–14</li></ul></li>
-          <li class="subject">Science ▶<ul class="chapters"><li>Ch 1–14</li></ul></li>
-          <li class="subject">Social Science ▶<ul class="chapters"><li>Ch 1–14</li></ul></li>
+          <li>Hindi (Ch 1–14)</li>
+          <li>English (Ch 1–14)</li>
+          <li>Maths (Ch 1–14)</li>
+          <li>Science (Ch 1–14)</li>
+          <li>Social Science (Ch 1–14)</li>
         </ul>
       </li>
-
-      <li class="column">Class 10
+      <li>Class 10 ▼
         <ul>
-          <li class="subject">Hindi ▶<ul class="chapters"><li>Ch 1–14</li></ul></li>
-          <li class="subject">English ▶<ul class="chapters"><li>Ch 1–14</li></ul></li>
-          <li class="subject">Maths ▶<ul class="chapters"><li>Ch 1–14</li></ul></li>
-          <li class="subject">Science ▶<ul class="chapters"><li>Ch 1–14</li></ul></li>
-          <li class="subject">Social Science ▶<ul class="chapters"><li>Ch 1–14</li></ul></li>
+          <li>Hindi (Ch 1–14)</li><li>English (Ch 1–14)</li><li>Maths (Ch 1–14)</li><li>Science (Ch 1–14)</li><li>Social Science (Ch 1–14)</li>
         </ul>
       </li>
-
-      <li class="column">Class 11
+      <li>Class 11 ▼
         <ul>
-          <li class="subject">Physics ▶<ul class="chapters"><li>Ch 1–14</li></ul></li>
-          <li class="subject">Chemistry ▶<ul class="chapters"><li>Ch 1–14</li></ul></li>
-          <li class="subject">Biology ▶<ul class="chapters"><li>Ch 1–14</li></ul></li>
-          <li class="subject">Maths ▶<ul class="chapters"><li>Ch 1–14</li></ul></li>
-          <li class="subject">English ▶<ul class="chapters"><li>Ch 1–14</li></ul></li>
+          <li>Physics (Ch 1–14)</li><li>Chemistry (Ch 1–14)</li><li>Biology (Ch 1–14)</li><li>Maths (Ch 1–14)</li><li>English (Ch 1–14)</li>
         </ul>
       </li>
-
-      <li class="column">Class 12
+      <li>Class 12 ▼
         <ul>
-          <li class="subject">Physics ▶<ul class="chapters"><li>Ch 1–14</li></ul></li>
-          <li class="subject">Chemistry ▶<ul class="chapters"><li>Ch 1–14</li></ul></li>
-          <li class="subject">Biology ▶<ul class="chapters"><li>Ch 1–14</li></ul></li>
-          <li class="subject">Maths ▶<ul class="chapters"><li>Ch 1–14</li></ul></li>
-          <li class="subject">English ▶<ul class="chapters"><li>Ch 1–14</li></ul></li>
+          <li>Physics (Ch 1–14)</li><li>Chemistry (Ch 1–14)</li><li>Biology (Ch 1–14)</li><li>Maths (Ch 1–14)</li><li>English (Ch 1–14)</li>
         </ul>
       </li>
-
     </ul>
   </li>
 
   <!-- SHEETS -->
   <li>Sheets ▼
     <ul>
-      <li class="column">Class 9 Sheets<ul><li>All Subjects Ch 1–14</li></ul></li>
-      <li class="column">Class 10 Sheets<ul><li>All Subjects Ch 1–14</li></ul></li>
-      <li class="column">Class 11 Sheets<ul><li>All Subjects Ch 1–14</li></ul></li>
-      <li class="column">Class 12 Sheets<ul><li>All Subjects Ch 1–14</li></ul></li>
+      <li>Class 9 Sheets ▼
+        <ul>
+          <li>Hindi Ch 1–14</li><li>English Ch 1–14</li><li>Maths Ch 1–14</li><li>Science Ch 1–14</li>
+        </ul>
+      </li>
+      <li>Class 10 Sheets ▼
+        <ul>
+          <li>Hindi Ch 1–14</li><li>English Ch 1–14</li><li>Maths Ch 1–14</li><li>Science Ch 1–14</li>
+        </ul>
+      </li>
+      <li>Class 11 Sheets ▼
+        <ul>
+          <li>Physics Ch 1–14</li><li>Chemistry Ch 1–14</li><li>Biology Ch 1–14</li><li>Maths Ch 1–14</li>
+        </ul>
+      </li>
+      <li>Class 12 Sheets ▼
+        <ul>
+          <li>Physics Ch 1–14</li><li>Chemistry Ch 1–14</li><li>Biology Ch 1–14</li><li>Maths Ch 1–14</li>
+        </ul>
+      </li>
     </ul>
   </li>
 
-  <!-- SAMPLE PAPERS -->
+  <!-- SAMPLE PAPER -->
   <li>Sample Paper ▼
     <ul>
       <li>MP Board Class 10</li>
@@ -201,9 +219,10 @@ nav ul ul{
 </ul>
 </nav>
 
-<section style="padding:40px;text-align:center;">
-  <h1 class="brand-font">Welcome to BoardHub</h1>
-  <p>Find notes, sheets & sample papers for Class 9 to 12.</p>
+<section class="hero">
+  <h1>Welcome to BoardHub</h1>
+  <p>Find Notes, Sheets & Sample Papers for Class 9 to 12</p>
+  <button>Get Started</button>
 </section>
 
 </body>
