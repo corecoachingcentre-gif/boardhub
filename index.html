@@ -285,6 +285,49 @@ function toggleMenu(id){
 
   </div>
 </div>
+    <!-- ⭐⭐⭐ RATING + FEEDBACK SECTION (Between Sample Paper & Footer) -->
+<div style="max-width:700px;margin:30px auto;background:white;padding:20px;border-radius:10px;border-left:6px solid #0077b6;font-family:Poppins;">
+  <h3 style="color:#0077b6;text-align:center;">⭐ Rate Our Sample Papers</h3>
+
+  <!-- Star Rating -->
+  <div id="ratingStars" style="text-align:center;font-size:32px;cursor:pointer;margin:10px 0;">
+    <span onclick="setRating(1)">⭐</span>
+    <span onclick="setRating(2)">⭐</span>
+    <span onclick="setRating(3)">⭐</span>
+    <span onclick="setRating(4)">⭐</span>
+    <span onclick="setRating(5)">⭐</span>
+  </div>
+
+  <p id="ratingMsg" style="text-align:center;font-weight:600;margin-bottom:10px;"></p>
+
+  <!-- Comment Box -->
+  <textarea id="ratingComment" placeholder="Write your feedback here..." style="width:100%;height:90px;padding:10px;border:2px solid #0077b6;border-radius:6px;"></textarea>
+
+  <button onclick="submitRating()" style="width:100%;background:#0077b6;color:white;border:none;padding:12px;font-size:18px;border-radius:6px;margin-top:10px;cursor:pointer;">
+    📩 Submit Rating
+  </button>
+
+  <p id="saveMsg" style="text-align:center;margin-top:10px;color:green;font-weight:600;"></p>
+</div>
+
+<script>
+let userRating = 0;
+function setRating(num){
+  userRating = num;
+  document.getElementById("ratingMsg").innerHTML = "You selected ⭐ " + num + " / 5";
+}
+function submitRating(){
+  if(userRating === 0){
+    alert("Please select a star rating before submitting.");
+    return;
+  }
+  let comment = document.getElementById("ratingComment").value;
+  localStorage.setItem("rating", userRating);
+  localStorage.setItem("comment", comment);
+  document.getElementById("saveMsg").innerHTML = "✔ Thank you! Your rating is saved on this device.";
+}
+</script>
+
 
 <!-- FOOTER -->
 <footer>
